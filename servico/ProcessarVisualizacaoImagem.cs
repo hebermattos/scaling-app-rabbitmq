@@ -6,11 +6,11 @@ namespace servico
 {
     public class ProcessarVisualizacaoImagem : IConsumer<VisualicaoImagem>
     {
-        private ServicoImagem _servicoImagem;
+        private ServicoProcessarVisualizacaoImagem _servicoImagem;
 
         public ProcessarVisualizacaoImagem()
         {
-            _servicoImagem = new ServicoImagem();
+            _servicoImagem = new ServicoProcessarVisualizacaoImagem();
         }
 
         public Task Consume(ConsumeContext<VisualicaoImagem> context)

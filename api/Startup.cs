@@ -1,4 +1,5 @@
 using System;
+using core;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +22,8 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddTransient<ServicoBuscarImagem>();
 
             services.AddMassTransit(x =>
             {

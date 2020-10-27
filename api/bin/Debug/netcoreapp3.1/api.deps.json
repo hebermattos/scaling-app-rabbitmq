@@ -1287,6 +1287,9 @@
         }
       },
       "core/1.0.0": {
+        "dependencies": {
+          "MassTransit": "7.0.6"
+        },
         "runtime": {
           "core.dll": {}
         },

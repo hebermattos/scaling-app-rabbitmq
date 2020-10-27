@@ -1352,6 +1352,9 @@
       "core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MassTransit": "7.0.6"
+        },
         "compile": {
           "bin/placeholder/core.dll": {}
         },

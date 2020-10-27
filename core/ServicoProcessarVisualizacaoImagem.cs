@@ -2,17 +2,8 @@ using System.Threading;
 
 namespace core
 {
-    public class ServicoImagem
+    public class ServicoProcessarVisualizacaoImagem
     {
-        public Imagem BuscarImagem(string id)
-        {
-            return new Imagem
-            {
-                Nome = "imagem01",
-                Conteudo = "saukdfapgsiufwauiryhw985v098q235qf79prysbi34hqf6293gry3vq9byg3947ft9hy39yvtoq"
-            };
-        }
-
         public void ProcessarVisualizacaoImagem(string id)
         {
             AtualizarMinhasAvaliacoes(id);
