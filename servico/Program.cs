@@ -14,6 +14,7 @@ namespace servico
                                 host.Username("guest");
                                 host.Password("guest");
                             });
+                            
                             config.ReceiveEndpoint("visualicaco.imagem", e =>
                             {
                                 e.Consumer<ProcessarVisualizacaoImagem>();
