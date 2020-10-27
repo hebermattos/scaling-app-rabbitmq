@@ -1,0 +1,1 @@
+#por que usar rabbitmq? 
