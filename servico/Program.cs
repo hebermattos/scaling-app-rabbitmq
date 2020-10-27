@@ -8,7 +8,7 @@ namespace servico
         static void Main(string[] args)
         {
             var bus = Bus.Factory.CreateUsingRabbitMq(config =>
-                         {
+                        {
                             config.Host(new Uri($"rabbitmq://localhost"), host =>
                             {
                                 host.Username("guest");
@@ -18,7 +18,7 @@ namespace servico
                             {
                                 e.Consumer<ProcessarVisualizacaoImagem>();
                             });
-                         });
+                        });
 
             bus.Start();
 
