@@ -9,7 +9,10 @@ namespace core
             AtualizarMinhasAvaliacoes(id);
 
             AtualizarMaisVistas(id);
+        }
 
+        public void ProcessarRecomendacaoImagem(string id)
+        {
             AtualizarRecomendacoes(id);
 
             EnviarNotificacoes(id);
