@@ -19,7 +19,7 @@ namespace servico
                              {
                                  e.Consumer<ProcessarVisualizacaoImagem>();
                              });
-                        });
+                         });
         }
     }
 }
