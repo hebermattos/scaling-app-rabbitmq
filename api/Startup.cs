@@ -1,4 +1,5 @@
-
+using System;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,18 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddMassTransit(x =>
+            {
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
+                {
+                    config.Host(new Uri($"rabbitmq://localhost"), host =>
+                    {
+                        host.Username("guest");
+                        host.Password("guest");
+                    });
+                }));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

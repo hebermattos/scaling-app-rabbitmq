@@ -1,4 +1,4 @@
-namespace api.Controllers
+namespace core
 {
     public class Imagem
     {
