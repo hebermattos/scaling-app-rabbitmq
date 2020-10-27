@@ -1,27 +1,32 @@
+using System;
 using System.Threading;
 
 namespace core
 {
     public class ServicoProcessarVisualizacaoImagem
     {
-        public void ProcessarVisualizacaoImagem(string id)
+        public void ProcessarVisualizacaoImagem(VisualicaoImagem evento)
         {
-            AtualizarMinhasAvaliacoes(id);
+            AtualizarMinhasAvaliacoes(evento.IdImagem);
 
-            AtualizarMaisVistas(id);
+            AtualizarMaisVistas(evento.IdImagem);
         }
 
-        public void ProcessarRecomendacaoImagem(string id)
+        public void ProcessarVisualizacaoImagemErro(VisualicaoImagem message)
         {
-            AtualizarRecomendacoes(id);
-
-            EnviarNotificacoes(id);
+            throw new NotImplementedException();
         }
 
-        private void EnviarNotificacoes(string id)
+        public void ProcessarRecomendacaoImagem(VisualicaoImagem evento)
         {
-            Thread.Sleep(1000);
-            return;
+            AtualizarRecomendacoes(evento.IdImagem);
+
+            EnviarNotificacoes(evento.IdImagem);
+        }
+
+        public void ProcessarRecomendacaoImagemErro(VisualicaoImagem message)
+        {
+            throw new NotImplementedException();
         }
 
         private void AtualizarRecomendacoes(string id)
@@ -31,6 +36,12 @@ namespace core
         }
 
         private void AtualizarMaisVistas(string id)
+        {
+            Thread.Sleep(1000);
+            return;
+        }
+
+        private void EnviarNotificacoes(string id)
         {
             Thread.Sleep(1000);
             return;

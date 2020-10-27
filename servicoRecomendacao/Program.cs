@@ -1,4 +1,5 @@
 ﻿using System;
+using GreenPipes;
 using MassTransit;
 
 namespace servico
@@ -14,10 +15,19 @@ namespace servico
                                 host.Username("guest");
                                 host.Password("guest");
                             });
+
+                            config.UseCircuitBreaker(cb =>
+                            {
+                                cb.TrackingPeriod = TimeSpan.FromMinutes(1);
+                                cb.TripThreshold = 15;
+                                cb.ActiveThreshold = 10;
+                                cb.ResetInterval = TimeSpan.FromMinutes(5);
+                            });
                             
                             config.ReceiveEndpoint("visualicaco.imagem", e =>
                             {
-                                e.Consumer<ProcessarVisualizacaoImagem>();
+                                e.UseRetry(r => r.Interval(5, TimeSpan.FromSeconds(1)));
+                                e.Consumer<ProcessarRecomendacaoImagem>();
                             });
                         });
 

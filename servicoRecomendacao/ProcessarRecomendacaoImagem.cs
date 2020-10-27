@@ -4,25 +4,25 @@ using MassTransit;
 
 namespace servico
 {
-    public class ProcessarVisualizacaoImagem : IConsumer<VisualicaoImagem>, IConsumer<Fault<VisualicaoImagem>>
+    public class ProcessarRecomendacaoImagem : IConsumer<VisualicaoImagem>, IConsumer<Fault<VisualicaoImagem>>
     {
         private ServicoProcessarVisualizacaoImagem _servicoImagem;
 
-        public ProcessarVisualizacaoImagem()
+        public ProcessarRecomendacaoImagem()
         {
             _servicoImagem = new ServicoProcessarVisualizacaoImagem();
         }
 
         public Task Consume(ConsumeContext<VisualicaoImagem> context)
         {
-            _servicoImagem.ProcessarVisualizacaoImagem(context.Message);
+            _servicoImagem.ProcessarRecomendacaoImagem(context.Message);
 
             return Task.CompletedTask;
         }
 
         public Task Consume(ConsumeContext<Fault<VisualicaoImagem>> context)
         {
-            _servicoImagem.ProcessarVisualizacaoImagemErro(context.Message.Message);
+            _servicoImagem.ProcessarRecomendacaoImagemErro(context.Message.Message);
 
             return Task.CompletedTask;
         }
