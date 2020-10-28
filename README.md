@@ -36,7 +36,7 @@ nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que no
 
 Vamos usar o cliente *Masstransit* para fazer a comunicação com rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida:
 
-pacotes Nugets necessários:
+Pacotes Nugets necessários:
 
 ```
 <PackageReference Include="MassTransit" Version="7.0.6" />
@@ -47,4 +47,6 @@ pacotes Nugets necessários:
 no *startup.cs* configuramos da seguiente maneira:
 
 ![api](./imagens/configuracao-01.PNG)
+
+Com isso já é injentado a classe *IBusControl* no container do net core. Essa é a classe usada para enviar os eventos, conforme o exemplo mais acima.
 
