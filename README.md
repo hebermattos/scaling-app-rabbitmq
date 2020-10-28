@@ -21,3 +21,9 @@ agora nossa chamada esta fazendo coisas que nao importam muito para o cliente, p
 removendo essas lógicas de "relatórios", deixamos a api mais performática para o cliente e removemos algum pontos de falhas na api. agora vamos começar a entrar no *microserviços*
 
 ## rabbitmq
+
+então, o que faremos?
+
+quando for solicitado uma imagem, vamos disperar um *evento* chamado *VisualizacaoImagem*. esse evento será enviado para o rabbitmq, e outro servico irá *consumir* essa evento, processando todas as regras que removemos do fluxo da api
+
+
