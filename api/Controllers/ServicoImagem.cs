@@ -6,7 +6,7 @@ namespace api.Controllers
     {
         public Imagem BuscarImagem(string id)
         {
-            AtualizarMinhasAvaliacoes(id);
+            AtualizarMinhasVisualizacoes(id);
 
             AtualizarMaisVistas(id);
 
@@ -39,7 +39,7 @@ namespace api.Controllers
             return;
         }
 
-        private void AtualizarMinhasAvaliacoes(string id)
+        private void AtualizarMinhasVisualizacoes(string id)
         {
             Thread.Sleep(1000);
             return;
