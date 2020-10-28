@@ -14,7 +14,7 @@ namespace core
 
         public void ProcessarVisualizacaoImagemErro(VisualicaoImagem message)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Processou erro da visualicao");
         }
 
         private void AtualizarMaisVistas(string id)

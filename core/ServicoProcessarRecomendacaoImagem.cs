@@ -14,7 +14,7 @@ namespace core
 
         public void ProcessarRecomendacaoImagemErro(VisualicaoImagem message)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Processou erro da recomendacao");
         }
 
         private void AtualizarRecomendacoes(string id)
