@@ -61,4 +61,7 @@ e com as seguintes configurações:
 
 ![api](./imagens/servico-01.PNG)
 
-a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API
+a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API:
+
+![api](./imagens/servico-02.PNG)
+
