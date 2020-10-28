@@ -34,6 +34,14 @@ nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que no
 
 ## Configurando a solução até agora...
 
-vamos usar o cliente *Masstransit* para fazer a comunicação com rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida
+Vamos usar o cliente *Masstransit* para fazer a comunicação com rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida:
+
+pacotes Nugets necessários:
+
+```
+<PackageReference Include="MassTransit" Version="7.0.6" />
+<PackageReference Include="MassTransit.AspNetCore" Version="7.0.6" />
+<PackageReference Include="MassTransit.RabbitMQ" Version="7.0.6" />
+```
 
 
