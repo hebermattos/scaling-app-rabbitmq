@@ -1,7 +1,8 @@
 using System.Threading.Tasks;
+using core;
 using MassTransit;
 
-namespace core
+namespace api
 {
     public class ServicoBuscarImagem
     {
