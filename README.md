@@ -68,3 +68,8 @@ a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, qu
 ## Explicando melhor o RabbitMQ
 
 Bom, agora vamos explicar um pouco melhor como funciona o rabbitmq e o masstransit.
+
+Vamos subir um *rabbit* rapidamendo com docker:
+```
+docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
+```
