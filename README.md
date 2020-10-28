@@ -70,6 +70,10 @@ a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, qu
 Também conseguimos escalar horizontalmente o processamento das regras. É so subir a mesma versão do nosso serviço.
 Os dois serviçoes estarão escutando a mesma fila, e o próprio rabbitmq vai distribuir as mensagens para o consumidores de maneira adequada (*round-robin* por exemplo), atingindo um processamento paralelo.
 
+[COLOCAR IMAGEM]
+
+o *broker* garante que a mesma mensagem não vai para o mesmo consumidor.
+
 ## Explicando melhor o RabbitMQ
 
 Bom, agora vamos explicar um pouco melhor como funciona o rabbitmq e o masstransit.
