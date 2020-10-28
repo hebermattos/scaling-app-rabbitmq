@@ -24,7 +24,7 @@ Removendo essas lógicas de "relatórios", deixamos a api mais performática par
 
 Então, o que faremos?
 
-Quando for solicitado uma imagem, vamos disperar um *evento* chamado *VisualizacaoImagem*. esse evento será enviado para o rabbitmq, e outro servico irá *consumir* essa evento, processando todas as regras que removemos do fluxo da api.
+Quando for solicitado uma imagem, vamos disparar um *evento* chamado *VisualizacaoImagem*. esse evento será enviado para o rabbitmq, e outro servico irá *consumir* essa evento, processando todas as regras que removemos do fluxo da api.
 
 ![api](./imagens/buscar-imagem-03.PNG)
 
