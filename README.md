@@ -60,3 +60,5 @@ o nosso servico que irá consumir as mensagens será um *Console Application*, c
 e com as seguintes configurações:
 
 ![api](./imagens/servico-01.PNG)
+
+a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API
