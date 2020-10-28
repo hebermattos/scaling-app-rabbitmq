@@ -24,7 +24,7 @@ namespace servico
                                 cb.ResetInterval = TimeSpan.FromMinutes(5);
                             });
 
-                            config.ReceiveEndpoint("recomendacao.imagem", e =>
+                            config.ReceiveEndpoint("visualizacao.imagem", e =>
                             {
                                 e.UseRetry(r => r.Interval(5, TimeSpan.FromSeconds(1)));
                                 e.Consumer<ProcessarVisualizacaoImagem>();
@@ -35,7 +35,7 @@ namespace servico
 
             Console.WriteLine("servico iniciado");
 
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }

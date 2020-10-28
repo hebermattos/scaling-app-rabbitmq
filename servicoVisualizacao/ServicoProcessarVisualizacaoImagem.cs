@@ -1,7 +1,8 @@
 using System;
 using System.Threading;
+using core;
 
-namespace core
+namespace servico
 {
     public class ServicoProcessarVisualizacaoImagem
     {
