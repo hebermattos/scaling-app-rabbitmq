@@ -79,3 +79,7 @@ A porta 5672 é usada para o envio e recebimento de mensagens, que já padrão n
 ![api](./imagens/rabbitmq-02.PNG)
 
 Temos duas entidades principais, o *Exchange* e a *Queue*. Na hora de publicar uma mensagem, ela é publicada em um *Exchange*, e é ele que envia para a *Queue*.
+
+Utilizando o *MassTransit*, já é criado um *Exchange* igual ao *namespace* do objeto de envio na hora que é publicada a mensagem. Quando um consumidor é conectado, é criada a fila configurada no *ReceiveEndpoint* (*visualicacao.imagem* no exemplo) e é feito também o *bind* com o exchange.
+
+**o "grude" acontece pelo objeto da mensagem, que tem que ser igual, inclusive o namespace, no produtor e consumidor **
