@@ -32,4 +32,8 @@ nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que no
 
 ![api](./imagens/rabbitmq-01.PNG)
 
+## Configurando a solução até agora...
+
+vamos usar o cliente *Masstransit* para fazer a comunicação com rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida
+
 
