@@ -1,4 +1,4 @@
-# Microserviços & Rabbitmq
+# Microserviços & RabbitMQ
 
 ## No inicio...
 
