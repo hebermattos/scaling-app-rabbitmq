@@ -1,7 +1,15 @@
-## por que usar rabbitmq? 
+# por que usar rabbitmq? 
 
-# no inicio
+## no inicio...
 
-temos uma api de visualizacao de imagens, que no incio era assim:
+temos uma api de visualizacao de imagens, que no início era assim:
 
-![Image of Yaktocat](./imagens/buscar-imagem-01.PNG)
+![api](./imagens/buscar-imagem-01.PNG)
+
+tudo ok. retorno uma imagem, bem simples ;)
+
+## novas features
+
+com a passagem do tempo, implementandos algumas features, basedas em rankings e recomendações:d
+
+![api](./imagens/buscar-imagem-02.PNG)
