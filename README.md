@@ -6,7 +6,7 @@ Temos uma api de visualizacao de imagens, que no início era assim:
 
 ![api](./imagens/buscar-imagem-01.PNG)
 
-Tudo ok. retorno uma imagem, bem simples ;)
+Tudo ok. retorna uma imagem, bem simples ;)
 
 ## Novas features
 
