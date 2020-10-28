@@ -10,6 +10,6 @@ tudo ok. retorno uma imagem, bem simples ;)
 
 ## novas features
 
-com a passagem do tempo, implementandos algumas features, basedas em rankings e recomendações:d
+com a passagem do tempo, implementandos algumas features, basedas em rankings e recomendações:
 
 ![api](./imagens/buscar-imagem-02.PNG)
