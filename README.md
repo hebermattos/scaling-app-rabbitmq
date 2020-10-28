@@ -77,3 +77,5 @@ docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 A porta 5672 é usada para o envio e recebimento de mensagens, que já padrão no nosso cliente, enquanto a 15672 é UI.
 
 ![api](./imagens/rabbitmq-02.PNG)
+
+Temos duas entidades principais, o *Exchange* e a *Queue*. Na hora de publicar uma mensagem, ela é publicada em um *Exchange*, e é ele que envia para a *Queue*.
