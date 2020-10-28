@@ -74,6 +74,6 @@ Vamos subir um *rabbit* rapidamendo com docker:
 docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 ```
 
-A porta 5672 é usada para o envio e recebimento de mensagens, enquanto a 15672 é UI.
+A porta 5672 é usada para o envio e recebimento de mensagens, que já padrão no nosso cliente, enquanto a 15672 é UI.
 
 ![api](./imagens/rabbitmq-02.PNG)
