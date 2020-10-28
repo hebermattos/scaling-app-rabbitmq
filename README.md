@@ -65,6 +65,6 @@ a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, qu
 
 ![api](./imagens/servico-02.PNG)
 
-## Explicando melhor RabbitMQ
+## Explicando melhor o RabbitMQ
 
 Bom, agora vamos explicar um pouco melhor como funciona o rabbitmq e o masstransit.
