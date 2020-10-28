@@ -44,4 +44,7 @@ pacotes Nugets necessários:
 <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.6" />
 ```
 
+no *startup.cs* configuramos da seguiente maneira:
+
+![api](./imagens/configuracao-01.PNG)
 
