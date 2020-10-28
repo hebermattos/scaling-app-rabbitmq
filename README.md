@@ -28,6 +28,6 @@ Quando for solicitado uma imagem, vamos disperar um *evento* chamado *Visualizac
 
 ![api](./imagens/buscar-imagem-03.PNG)
 
-nosso evento vai conter somente o ID da imagem (o nome no caso), que é oque nossos métodos precisam.
+nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que nossos métodos precisam.
 
 
