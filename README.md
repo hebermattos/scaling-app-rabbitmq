@@ -50,3 +50,13 @@ no *startup.cs* configuramos da seguiente maneira:
 
 Com isso já é injentado a classe *IBusControl* no container do net core. Essa é a classe usada para enviar os eventos para o *broker* (RabbitMQ é um *Message Broker*), conforme o exemplo mais acima.
 
+o nosso servico que irá consumir as mensagens será um *Console Application*, com os seguintes pacotes:
+
+```
+<PackageReference Include="MassTransit" Version="7.0.6" />
+<PackageReference Include="MassTransit.RabbitMQ" Version="7.0.6" />
+```
+
+e com as seguintes configurações:
+
+![api](./imagens/servico-01.PNG)
