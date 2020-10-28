@@ -48,5 +48,5 @@ no *startup.cs* configuramos da seguiente maneira:
 
 ![api](./imagens/configuracao-01.PNG)
 
-Com isso já é injentado a classe *IBusControl* no container do net core. Essa é a classe usada para enviar os eventos, conforme o exemplo mais acima.
+Com isso já é injentado a classe *IBusControl* no container do net core. Essa é a classe usada para enviar os eventos para o *broker* (RabbitMQ é um *Message Broker*), conforme o exemplo mais acima.
 
