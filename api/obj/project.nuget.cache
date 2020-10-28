@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0ftfBScHFH/BnmNA/mzPRDkh77GuRt2R9yYgRloUKhS4EbC2pf1IpMJv0+2832Cdqe+icEjv7KwWRaaeeXLnbg==",
+  "dgSpecHash": "OFLjkOXe1/sZoTLNyGS+g4KYHQ51QVyomNuV9tm/0TUBH17MH0cZWSRryq3LeSI4hlcgJ5sr05LMrExoHo+sWg==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\TutorialMasstransit\\api\\api.csproj",
   "expectedPackageFiles": [
@@ -12,8 +12,8 @@
     "C:\\Users\\ilegra-0669\\.nuget\\packages\\masstransit.rabbitmq\\7.0.6\\masstransit.rabbitmq.7.0.6.nupkg.sha512",
     "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.5\\microsoft.extensions.configuration.abstractions.3.1.5.nupkg.sha512",
-    "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.9\\microsoft.extensions.dependencyinjection.3.1.9.nupkg.sha512",
-    "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.9\\microsoft.extensions.dependencyinjection.abstractions.3.1.9.nupkg.sha512",
+    "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.5\\microsoft.extensions.dependencyinjection.3.1.5.nupkg.sha512",
+    "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.5\\microsoft.extensions.dependencyinjection.abstractions.3.1.5.nupkg.sha512",
     "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks\\3.1.5\\microsoft.extensions.diagnostics.healthchecks.3.1.5.nupkg.sha512",
     "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\3.1.5\\microsoft.extensions.diagnostics.healthchecks.abstractions.3.1.5.nupkg.sha512",
     "C:\\Users\\ilegra-0669\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.5\\microsoft.extensions.fileproviders.abstractions.3.1.5.nupkg.sha512",

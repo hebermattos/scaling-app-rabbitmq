@@ -53,10 +53,6 @@
             "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[7.0.6, )"
-            },
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[3.1.9, )"
             }
           },
           "imports": [
