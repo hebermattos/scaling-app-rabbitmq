@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using core;
+using MassTransit;
+using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
@@ -6,18 +9,18 @@ namespace api.Controllers
     [Route("[controller]")]
     public class ImagensController : ControllerBase
     {
-        private ServicoImagem _servicoImagem;
+        private ServicoBuscarImagem _servicoImagem;
 
-        public ImagensController()
+        public ImagensController(ServicoBuscarImagem ServicoImagem)
         {
-            _servicoImagem = new ServicoImagem();
+            _servicoImagem = ServicoImagem;
         }
 
         [HttpGet]
         [Route("{id}")]
-        public Imagem Get(string id)
+        public async Task<Imagem> GetAsync(string id)
         {
-            return _servicoImagem.BuscarImagem(id);
+            return await _servicoImagem.BuscarImagemAsync(id);
         }
     }
 }
