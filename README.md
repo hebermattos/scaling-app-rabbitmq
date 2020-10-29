@@ -133,4 +133,4 @@ Ok, mas então a mesma mensagem tem que ir para dois serviços agora.
 
 Como explicamos antes, a mensagem é enviada para um *exchange* e ele envia para fila. Agora nos temos duas filas, e as duas tem a mesmo *bind* para o *exchange*, pois ele é definido pelo objeto, que ainda é mesmo para todos. E como o nosso *exchange* é do tipo *fanout* (o padrão do masstransit), ele envia a mensagem para *todas* as filas conectadas. 
 
-![api](.imagens/arq-03.png)
+![api](./imagens/arq-03.png)
