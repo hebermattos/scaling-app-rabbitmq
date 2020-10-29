@@ -4,7 +4,7 @@
 
 Temos uma api de visualizacao de imagens, que no início era assim:
 
-![api](./imagens/buscar-imagem-01.PNG)
+![img](./imagens/buscar-imagem-01.PNG)
 
 Tudo ok. retorna uma imagem, bem simples ;)
 
@@ -12,7 +12,7 @@ Tudo ok. retorna uma imagem, bem simples ;)
 
 Com a passagem do tempo, implementandos algumas features, basedas em rankings e recomendações:
 
-![api](./imagens/buscar-imagem-02.PNG)
+![img](./imagens/buscar-imagem-02.PNG)
 
 ## Sinal amarelo!
 
@@ -26,11 +26,11 @@ Então, o que faremos?
 
 Quando for solicitado uma imagem, vamos disparar um *evento* chamado *VisualizacaoImagem*. esse evento será enviado para o rabbitmq, e outro servico irá *consumir* esse evento, processando todas as regras que removemos do fluxo da api.
 
-![api](./imagens/buscar-imagem-03.PNG)
+![img](./imagens/buscar-imagem-03.PNG)
 
 nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que nossos métodos precisam.
 
-![api](./imagens/arq-01.png)
+![img](./imagens/arq-01.png)
 
 A nossa classe que vai processar o evento tem que implementar a interface *IConsumer*, passando o objeto que queremos processar.
 
@@ -48,7 +48,7 @@ Pacotes Nugets necessários:
 
 no *startup.cs* configuramos da seguiente maneira:
 
-![api](./imagens/configuracao-01.PNG)
+![img](./imagens/configuracao-01.PNG)
 
 Com isso já é injentado a classe *IBusControl* no container do net core. Essa é a classe usada para enviar os eventos para o *broker* (RabbitMQ é um *Message Broker*), conforme o exemplo mais acima.
 
@@ -61,18 +61,18 @@ o nosso servico que irá consumir as mensagens será um *Console Application*, c
 
 e com as seguintes configurações:
 
-![api](./imagens/servico-01.PNG)
+![img](./imagens/servico-01.PNG)
 
 a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API:
 
-![api](./imagens/servico-02.PNG)
+![img](./imagens/servico-02.PNG)
 
 ## Escalabilidade horizontal
 
 Também conseguimos escalar horizontalmente o processamento das regras. É so subir a mesma versão do nosso serviço.
 Os dois serviços estarão escutando a mesma fila, e o próprio rabbitmq vai distribuir as mensagens para o consumidores de maneira adequada (*round-robin* por exemplo), atingindo um processamento paralelo.
 
-![api](./imagens/arq-02.png)
+![img](./imagens/arq-02.png)
 
 o *broker* garante que a mesma mensagem não vai para o mesmo consumidor.
 
@@ -87,7 +87,7 @@ docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 
 A porta 5672 é usada para o envio e recebimento de mensagens, que já padrão no nosso cliente, enquanto a 15672 é UI.
 
-![api](./imagens/rabbitmq-02.PNG)
+![img](./imagens/rabbitmq-02.PNG)
 
 Temos duas entidades principais, o *Exchange* e a *Queue*. Na hora de publicar uma mensagem, ela é publicada em um *Exchange*, e é ele que envia para a *Queue*.
 
@@ -97,17 +97,17 @@ Utilizando o *MassTransit*, já é criado um *Exchange* igual ao *namespace* do 
 
 assim temos a *Queue*:
 
-![api](./imagens/rabbit_queue.PNG)
+![img](./imagens/rabbit_queue.PNG)
 
 
 o *Exchange*:
 
-![api](./imagens/rabbit_exchange.PNG)
+![img](./imagens/rabbit_exchange.PNG)
 
 
 e o *Binding*:
 
-![api](./imagens/rabbit_bind.PNG)
+![img](./imagens/rabbit_bind.PNG)
 
  e BOOM! começamos com uma *arquitetura orientada à eventos*, e processamento de forma *assincrona* e paralela. 
 
@@ -121,7 +121,7 @@ Sendo assim, vamos dividir esse serviço em dois, um para gerenciar as recomenda
 
 O nosso serviço de recomendação vai ter os seguientes metodos:
 
-![api](./imagens/servico-processamento-01.PNG)
+![img](./imagens/servico-processamento-01.PNG)
 
 e vai apontar para *outra queue*, a *recomendacao.imagem* 
 
@@ -133,16 +133,16 @@ Ok, mas então a mesma mensagem tem que ir para dois serviços agora.
 
 Como explicamos antes, a mensagem é enviada para um *exchange* e ele envia para fila. Agora nos temos duas filas, e as duas tem a mesmo *bind* para o *exchange*, pois ele é definido pelo objeto, que ainda é mesmo para todos. E como o nosso *exchange* é do tipo *fanout* (o padrão do masstransit), ele envia a mensagem para *todas* as filas conectadas. 
 
-![api](./imagens/arq-03.png)
+![img](./imagens/arq-03.png)
 
 Agora o pessoal que trabalha em um serviço não vai interfir no outro. #cadaUmComSeusBugs
 
 Nos podemos agora dimensionar melhor o uso de recursos e escalar horizontalmente o servico necessaário:
 
-![api](./imagens/arq-04.png)
+![img](./imagens/arq-04.png)
 
 Esse é o nosso caminho feliz, mas....
 
 ## E os erros?
 
-O *masstransit* nos fornece umas features que facilitam o tratamento de erros. Vamos ver as *Retries* e o *CircuitBreaker* 
+O *masstransit* nos fornece umas features que facilitam o tratamento de erros. Vamos ver as *Retries* e o *CircuitBreaker*.
