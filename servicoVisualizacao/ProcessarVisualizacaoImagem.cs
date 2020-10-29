@@ -25,7 +25,7 @@ namespace servico
 
         private void AtualizarMinhasAvaliacoes(string id)
         {
-            Console.WriteLine("Atualizou minha visualizações");
+            Console.WriteLine("Atualizou minhas visualizações");
             return;
         }
     }

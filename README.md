@@ -170,7 +170,7 @@ docker-compose up
 ```
 ![img](./imagens/exemplo.PNG)
 
-Bom, por enquanto é isso, um caso de uso explicando alguns conceito importantes. na *master* tem o código mais atualizado. Para saber mais, procure esses tópicos:
+Bom, por enquanto é isso. Um caso de uso explicando alguns conceito importantes. Para saber mais, procure esses tópicos:
 
 * Microserviços
 * Rabbitmq (existem outros, como o Apache Kafka)
