@@ -126,3 +126,9 @@ O nosso serviço de recomendação vai ter os seguientes metodos:
 e vai apontar para *outra queue*, a *recomendacao.imagem* 
 
 O outro serviço vai ficar com os métodos *AtualizarMinhasAvaliacoes* e *AtualizarMaisVistas* e vai se conectar na fila *visualizacao.imagem*
+
+## Explicando melhor o RabbitMQ [2]
+
+Ok, mas então a mesma mensagem tem que ir para dois serviços agora. 
+
+Como explicamos antes, a mensagem é enviada para um *exchange* e ele envia para fila. Agora nos temos duas filas, e as duas tem a mesmo *bind* para o *exchange*, pois ele é definido pelo objeto, que ainda é mesmo para todos. E como o nosso *exchange* é do tipo *fanout* (o padrão do masstransit), ele envia a mensagem para *todas* as filas conectadas. 
