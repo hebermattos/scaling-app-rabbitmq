@@ -5,3 +5,4 @@ namespace core
         public string IdImagem { get; set; }
     }
 }
+
