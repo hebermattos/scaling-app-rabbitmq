@@ -127,6 +127,8 @@ e vai apontar para *outra queue*, a *recomendacao.imagem*
 
 O outro serviço vai ficar com os métodos *AtualizarMinhasAvaliacoes* e *AtualizarMaisVistas* e vai se conectar na fila *visualizacao.imagem*
 
+![img](./imagens/rabbitmq-03.PNG)
+
 ## Explicando melhor o RabbitMQ [2]
 
 Ok, mas então a mesma mensagem tem que ir para dois serviços agora. 
@@ -146,3 +148,8 @@ Esse é o nosso caminho feliz, mas....
 ## E os erros?
 
 O *masstransit* nos fornece umas features que facilitam o tratamento de erros. Vamos ver as *Retries* e o *CircuitBreaker*.
+
+Quando acontece uma *exception* em nosso consumidor, a mensagem vai para uma fila *_error*, por exemplo:
+
+![img](./imagens/rabbitmq-04.PNG)
+

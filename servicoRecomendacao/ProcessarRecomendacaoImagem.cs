@@ -9,6 +9,8 @@ namespace servico
     {
         public Task Consume(ConsumeContext<VisualicaoImagem> context)
         {
+            throw new System.Exception("asdasdasd");
+
             AtualizarRecomendacoes(context.Message.IdImagem);
 
             EnviarNotificacoes(context.Message.IdImagem);
