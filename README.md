@@ -140,3 +140,9 @@ Agora o pessoal que trabalha em um serviço não vai interfir no outro. #cadaUmC
 Nos podemos agora dimensionar melhor o uso de recursos e escalar horizontalmente o servico necessaário:
 
 ![api](./imagens/arq-04.png)
+
+Esse é o nosso caminho feliz, mas....
+
+## E os erros?
+
+O *masstransit* nos fornece umas features que facilitam o tratamento de erros. Vamos ver as *Retries* e o *CircuitBreaker* 
