@@ -10,7 +10,7 @@ namespace servico
         {
             var bus = Bus.Factory.CreateUsingRabbitMq(config =>
                         {
-                            config.Host(new Uri($"rabbitmq://localhost"), host =>
+                            config.Host(new Uri($"rabbitmq://queue"), host =>
                             {
                                 host.Username("guest");
                                 host.Password("guest");

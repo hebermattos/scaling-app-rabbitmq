@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using core;
@@ -18,13 +19,13 @@ namespace servico
 
         private void AtualizarMaisVistas(string id)
         {
-            Thread.Sleep(1000);
+            Console.WriteLine("Atualizou mais vistas");
             return;
         }
 
         private void AtualizarMinhasAvaliacoes(string id)
         {
-            Thread.Sleep(1000);
+            Console.WriteLine("Atualizou minha visualizações");
             return;
         }
     }

@@ -10,8 +10,4 @@
     <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.6" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\core\core.csproj" />
-  </ItemGroup>
-
 </Project>

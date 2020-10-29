@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using core;
@@ -9,8 +10,6 @@ namespace servico
     {
         public Task Consume(ConsumeContext<VisualicaoImagem> context)
         {
-            throw new System.Exception("asdasdasd");
-
             AtualizarRecomendacoes(context.Message.IdImagem);
 
             EnviarNotificacoes(context.Message.IdImagem);
@@ -20,13 +19,13 @@ namespace servico
 
         private void AtualizarRecomendacoes(string id)
         {
-            Thread.Sleep(1000);
+            Console.WriteLine("Atualizou Recomendacoes");
             return;
         }
 
         private void EnviarNotificacoes(string id)
         {
-            Thread.Sleep(1000);
+            Console.WriteLine("Enviou Notificacoes");
             return;
         }
     }
