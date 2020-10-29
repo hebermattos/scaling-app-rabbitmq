@@ -153,3 +153,7 @@ Quando acontece uma *exception* em nosso consumidor, a mensagem vai para uma fil
 
 ![img](./imagens/rabbitmq-04.PNG)
 
+Com as *retries* podemos configurar tentativas. por exemplo: 5 tentanticas em intervalos de 1 segundo. depois dessas tentativas, a mensagem vai para a fila de erro.
+
+![img](./imagens/servico-03.PNG)
+
