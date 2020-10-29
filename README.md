@@ -107,7 +107,7 @@ e o *Binding*:
 
 ![api](./imagens/rabbit_bind.PNG)
 
- e BOOM! começamos com uma *arquitetura orientada à eventos* onde os processamos de forma *assincrona*. 
+ e BOOM! começamos com uma *arquitetura orientada à eventos*  e processameneto de forma *assincrona* e paralela. 
 
  ## Melhorando a arquitetura
 
