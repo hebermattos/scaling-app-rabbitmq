@@ -157,7 +157,7 @@ Com as *retries* podemos configurar tentativas. por exemplo: 5 tentanticas em in
 
 ![img](./imagens/servico-03.PNG)
 
-Outra featue interessante que podemos configurar é *Circuit Breaker*:
+Outra feature interessante que podemos configurar é o *Circuit Breaker*:
 
 ![img](./imagens/servico-04.PNG)
 
