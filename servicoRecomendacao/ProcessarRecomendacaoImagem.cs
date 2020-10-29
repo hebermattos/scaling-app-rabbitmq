@@ -1,30 +1,31 @@
+using System.Threading;
 using System.Threading.Tasks;
 using core;
 using MassTransit;
 
 namespace servico
 {
-    public class ProcessarRecomendacaoImagem : IConsumer<VisualicaoImagem>, IConsumer<Fault<VisualicaoImagem>>
+    public class ProcessarRecomendacaoImagem : IConsumer<VisualicaoImagem>
     {
-        private ServicoProcessarRecomendacaoImagem _servicoImagem;
-
-        public ProcessarRecomendacaoImagem()
-        {
-            _servicoImagem = new ServicoProcessarRecomendacaoImagem();
-        }
-
         public Task Consume(ConsumeContext<VisualicaoImagem> context)
         {
-            _servicoImagem.ProcessarRecomendacaoImagem(context.Message);
+            AtualizarRecomendacoes(context.Message.IdImagem);
+
+            EnviarNotificacoes(context.Message.IdImagem);
 
             return Task.CompletedTask;
         }
 
-        public Task Consume(ConsumeContext<Fault<VisualicaoImagem>> context)
+        private void AtualizarRecomendacoes(string id)
         {
-            _servicoImagem.ProcessarRecomendacaoImagemErro(context.Message.Message);
+            Thread.Sleep(1000);
+            return;
+        }
 
-            return Task.CompletedTask;
+        private void EnviarNotificacoes(string id)
+        {
+            Thread.Sleep(1000);
+            return;
         }
     }
 }

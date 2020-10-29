@@ -113,6 +113,10 @@ e o *Binding*:
 
  ## Melhorando a arquitetura
 
-ok. temos agora um processamento escalavel de certas tarefas que podem ser executadas em segundo plano. estamos entrando no mundo dos *microserviços*, mas esta faltando o *micro* ainda.
+Ok. Temos agora um processamento escalavel de certas tarefas que podem ser executadas em segundo plano. Estamos entrando no mundo dos *microserviços*, mas esta faltando o *micro* ainda.
 
-olhando melhor a classe *ProcessarVisualizacaoImagem* notamos que ela esta com muitas reponsabilidades
+Olhando melhor a classe *ProcessarVisualizacaoImagem* notamos que ela esta com muitas reponsabilidades. Imagine um cenario que cada tarefa tem um time responsável. Teriamos quatro times desenvolvendo no mesmo projeto, podendo um interferir (bugar) no trabalho do outro.
+
+Sendo assim, vamos dividir esse serviço em dois, um para gerenciar as recomendações e outro para as visualizações.
+
+
