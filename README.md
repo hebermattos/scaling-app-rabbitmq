@@ -170,6 +170,8 @@ docker-compose up
 ```
 ![img](./imagens/exemplo.PNG)
 
+Requisições pode ser feitas na api na url http://localhost:5000/imagens/123 e a UI no rabbit pode ser visualizada no http://localhost:15672. No console vai aparecer as mensagens sendo "processadas"
+
 Bom, por enquanto é isso. Um caso de uso explicando alguns conceito importantes. Para saber mais, procure esses tópicos:
 
 * Microserviços
