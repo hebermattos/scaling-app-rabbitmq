@@ -119,8 +119,10 @@ Olhando melhor a classe *ProcessarVisualizacaoImagem* notamos que ela esta com m
 
 Sendo assim, vamos dividir esse serviço em dois, um para gerenciar as recomendações e outro para as visualizações.
 
-o nosso serviço de recomendação vai ter os seguientes metodos:
+O nosso serviço de recomendação vai ter os seguientes metodos:
 
 ![api](./imagens/servico-processamento-01.PNG)
 
 e vai apontar para *outra queue*, a *recomendacao.imagem* 
+
+O outro serviço vai ficar com os métodos *AtualizarMinhasAvaliacoes* e *AtualizarMaisVistas* e vai se conectar na fila *visualizacao.imagem*
