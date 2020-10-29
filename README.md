@@ -32,6 +32,8 @@ nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que no
 
 ![api](./imagens/arq-01.png)
 
+a nossa classe tem que implementar a interface *IConsumer*, passando o objeto que queremos processar.
+
 ## Configurando a solução até agora...
 
 Vamos usar o cliente *Masstransit* para fazer a comunicação com rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida:
@@ -68,7 +70,7 @@ a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, qu
 ## Escalabilidade horizontal
 
 Também conseguimos escalar horizontalmente o processamento das regras. É so subir a mesma versão do nosso serviço.
-Os dois serviçoes estarão escutando a mesma fila, e o próprio rabbitmq vai distribuir as mensagens para o consumidores de maneira adequada (*round-robin* por exemplo), atingindo um processamento paralelo.
+Os dois serviços estarão escutando a mesma fila, e o próprio rabbitmq vai distribuir as mensagens para o consumidores de maneira adequada (*round-robin* por exemplo), atingindo um processamento paralelo.
 
 ![api](./imagens/arq-02.png)
 
@@ -111,4 +113,6 @@ e o *Binding*:
 
  ## Melhorando a arquitetura
 
- ....... under construction ;*
+ok. temos agora um processamento escalavel de certas tarefas que podem ser executadas em segundo plano. estamos entrando no mundo dos *microserviços*, mas esta faltando o *micro* ainda.
+
+olhando melhor a classe *ProcessarVisualizacaoImagem* notamos que ela esta com muitas reponsabilidades

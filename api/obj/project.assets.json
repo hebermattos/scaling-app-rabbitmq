@@ -1482,6 +1482,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MassTransit": "7.0.6"
+        },
+        "compile": {
+          "bin/placeholder/core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/core.dll": {}
+        }
       }
     }
   },
@@ -5245,13 +5258,19 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "core/1.0.0": {
+      "type": "project",
+      "path": "../core/core.csproj",
+      "msbuildProject": "../core/core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "MassTransit >= 7.0.6",
       "MassTransit.AspNetCore >= 7.0.6",
-      "MassTransit.RabbitMQ >= 7.0.6"
+      "MassTransit.RabbitMQ >= 7.0.6",
+      "core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5284,7 +5303,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\TutorialMasstransit\\core\\core.csproj": {
+              "projectPath": "C:\\Projetos\\TutorialMasstransit\\core\\core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

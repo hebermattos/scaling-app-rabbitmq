@@ -42,3 +42,5 @@ C:\Projetos\TutorialMasstransit\api\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Projetos\TutorialMasstransit\api\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Projetos\TutorialMasstransit\api\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 C:\Projetos\TutorialMasstransit\api\obj\Debug\netcoreapp3.1\api.csproj.CopyComplete
+C:\Projetos\TutorialMasstransit\api\bin\Debug\netcoreapp3.1\core.dll
+C:\Projetos\TutorialMasstransit\api\bin\Debug\netcoreapp3.1\core.pdb
