@@ -136,3 +136,7 @@ Como explicamos antes, a mensagem é enviada para um *exchange* e ele envia para
 ![api](./imagens/arq-03.png)
 
 Agora o pessoal que trabalha em um serviço não vai interfir no outro. #cadaUmComSeusBugs
+
+Nos podemos agora dimensionar melhor o uso de recursos e escalar horizontalmente o servico necessaário:
+
+![api](./imagens/arq-04.png)
