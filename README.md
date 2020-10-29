@@ -161,5 +161,14 @@ Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse p
 
 ![img](./imagens/servico-04.PNG)
 
+## Sopa de letrinhas
+
+bom, por enquanto é isso, um caso de uso explicando alguns conceito importantes. Para saber mais, procure esses tópicos:
+
+Rabbitmq (existem outros, como o Apache Kafka)
+Arquitetura orientada à eventos
+Sagas
+Escalabilidade Horizontal
+Circuit Breaker
 
 
