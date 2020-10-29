@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using GreenPipes;
 using MassTransit;
 
@@ -6,6 +7,8 @@ namespace servico
 {
     class Program
     {
+        private static readonly AutoResetEvent _closing = new AutoResetEvent(false);
+
         static void Main(string[] args)
         {
             var bus = Bus.Factory.CreateUsingRabbitMq(config =>
@@ -35,7 +38,7 @@ namespace servico
 
             Console.WriteLine("servico iniciado");
 
-            Console.ReadLine();
+            _closing.WaitOne();
         }
     }
 }

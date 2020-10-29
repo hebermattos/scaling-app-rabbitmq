@@ -163,6 +163,13 @@ Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse p
 
 ## Sopa de letrinhas
 
+Quer ver tudo rodando? baixa a *master* e executa:
+
+```
+docker-compose up
+```
+![img](./imagens/exemplo.PNG)
+
 Bom, por enquanto é isso, um caso de uso explicando alguns conceito importantes. na *master* tem o código mais atualizado. Para saber mais, procure esses tópicos:
 
 * Microserviços
@@ -171,5 +178,6 @@ Bom, por enquanto é isso, um caso de uso explicando alguns conceito importantes
 * Sagas
 * Escalabilidade Horizontal
 * Circuit Breaker
+* Docker
 
 
