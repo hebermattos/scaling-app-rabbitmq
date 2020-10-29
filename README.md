@@ -30,7 +30,7 @@ Quando for solicitado uma imagem, vamos disparar um *evento* chamado *Visualizac
 
 nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que nossos métodos precisam.
 
-![api](./imagens/rabbitmq-01.PNG)
+![api](./imagens/arq-01.PNG)
 
 ## Configurando a solução até agora...
 
@@ -70,7 +70,7 @@ a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, qu
 Também conseguimos escalar horizontalmente o processamento das regras. É so subir a mesma versão do nosso serviço.
 Os dois serviçoes estarão escutando a mesma fila, e o próprio rabbitmq vai distribuir as mensagens para o consumidores de maneira adequada (*round-robin* por exemplo), atingindo um processamento paralelo.
 
-[COLOCAR IMAGEM]
+![api](./imagens/arq-02.PNG)
 
 o *broker* garante que a mesma mensagem não vai para o mesmo consumidor.
 
