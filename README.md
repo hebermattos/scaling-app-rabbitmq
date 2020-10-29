@@ -32,7 +32,7 @@ nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que no
 
 ![api](./imagens/arq-01.png)
 
-a nossa classe tem que implementar a interface *IConsumer*, passando o objeto que queremos processar.
+A nossa classe que vai processar o evento tem que implementar a interface *IConsumer*, passando o objeto que queremos processar.
 
 ## Configurando a solução até agora...
 
