@@ -157,7 +157,7 @@ Com as *retries* podemos configurar tentativas. por exemplo: 5 tentanticas em in
 
 ![img](./imagens/servico-03.PNG)
 
-Outra feature interessante que podemos configurar é o *Circuit Breaker*:
+Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse padrão é muito importante para os microserviços. Basicamente, é monitorado o número de erros no servico, se a quantidade passa do valor estabelecido, o *circuito abre*, impedindo que requisições futuras, que possivelvente vão falhar, sobrecarregue o servico. Depois de um tempo determinado, e se não tiver mais erros acontecendo, o *circuito fecha*, voltando o fluxo normal.
 
 ![img](./imagens/servico-04.PNG)
 
