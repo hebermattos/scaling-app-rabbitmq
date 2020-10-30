@@ -28,7 +28,7 @@ Quando for solicitado uma imagem, vamos disparar um *evento* chamado *Visualizac
 
 ![img](./imagens/buscar-imagem-03.PNG)
 
-Nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que nossos métodos precisam.
+Nosso evento vai conter somente o ID da imagem, que é o que nossos métodos precisam.
 
 ![img](./imagens/arq-01.png)
 
@@ -110,7 +110,7 @@ e o *Binding*:
 
 ![img](./imagens/rabbit_bind.PNG)
 
- e BOOM! começamos com uma *arquitetura orientada à eventos*, e processamento de forma *assincrona* e paralela. 
+ e BOOM! começamos com uma *arquitetura orientada à eventos* e processamento de forma *assincrona* e paralela. Também não precisamos nos preocupar muito com o *downtime* do servico, pois as mensagens vão continuar na fila, e quando o serviço subir, vai consumir as mensagens. #soViVantagens.
 
 ## Melhorando a arquitetura
 
