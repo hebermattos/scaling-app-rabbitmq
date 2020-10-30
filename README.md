@@ -177,8 +177,7 @@ Bom, por enquanto é isso. Um caso de uso explicando alguns conceito importantes
 
 * Microsserviços
 * Rabbitmq (existem outros, como o Apache Kafka)
-* Arquitetura orientada à eventos
-* Sagas
+* Arquitetura orientada à eventos (*Sagas* é a evolução)
 * Escalabilidade Horizontal
 * Circuit Breaker
 * Docker
