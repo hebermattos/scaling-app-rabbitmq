@@ -1,4 +1,4 @@
-# Microserviços & RabbitMQ
+# Microsserviços & RabbitMQ
 
 ## No inicio...
 
@@ -18,7 +18,7 @@ Com a passagem do tempo, implementamos algumas features, basedas em rankings e r
 
 Agora nossa chamada esta fazendo coisas que nao importam muito para o cliente, pelo menos não em *tempo real*. Todas essas ações podem sem feitas de maneira *assincrona*, liberando a chamada na api para fazer quase exclusivamente o que o cliente esta pedindo: retornar uma imagem.
 
-Removendo essas lógicas de "relatórios", deixamos a api mais performática para o cliente e removemos alguns pontos de falhas na api. Agora vamos começar a entrar nos *microserviços*.
+Removendo essas lógicas de "relatórios", deixamos a api mais performática para o cliente e removemos alguns pontos de falhas na api. Agora vamos começar a entrar nos *microsserviços*.
 
 ## RabbitMQ
 
@@ -114,7 +114,7 @@ e o *Binding*:
 
 ## Melhorando a arquitetura
 
-Ok. Temos agora um processamento escalável de certas tarefas que podem ser executadas em segundo plano. Estamos entrando no mundo dos *microserviços*, mas esta faltando o *micro* ainda.
+Ok. Temos agora um processamento escalável de certas tarefas que podem ser executadas em segundo plano. Estamos entrando no mundo dos *microsserviços*, mas esta faltando o *micro* ainda.
 
 Olhando melhor a classe *ProcessarVisualizacaoImagem* notamos que ela esta com muitas reponsabilidades. Imagine um cenario que cada tarefa tem um time responsável. Teriamos quatro times desenvolvendo no mesmo projeto, podendo um interferir (bugar) no trabalho do outro.
 
@@ -158,7 +158,7 @@ Com as *retries* podemos configurar tentativas. por exemplo: 5 tentativas em int
 
 ![img](./imagens/servico-03.PNG)
 
-Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse padrão é muito importante para os microserviços. Basicamente, é monitorado o número de erros no serviço, e se a quantidade passa do valor estabelecido em um determinado periodo de tempo, o *circuito abre*, impedindo que requisições futuras, que possivelvente vão falhar, sobrecarregue o servico. Depois de um tempo determinado, e se não tiver mais erros acontecendo, o *circuito fecha*, voltando o fluxo normal.
+Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse padrão é muito importante para os microsserviços. Basicamente, é monitorado o número de erros no serviço, e se a quantidade passa do valor estabelecido em um determinado periodo de tempo, o *circuito abre*, impedindo que requisições futuras, que possivelvente vão falhar, sobrecarregue o servico. Depois de um tempo determinado, e se não tiver mais erros acontecendo, o *circuito fecha*, voltando o fluxo normal.
 
 ![img](./imagens/servico-04.PNG)
 
@@ -175,7 +175,7 @@ Requisições pode ser feitas na api na url http://localhost:5000/imagens/123 e 
 
 Bom, por enquanto é isso. Um caso de uso explicando alguns conceito importantes. Para saber mais, procure esses tópicos:
 
-* Microserviços
+* microsserviços
 * Rabbitmq (existem outros, como o Apache Kafka)
 * Arquitetura orientada à eventos
 * Sagas
