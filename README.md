@@ -175,7 +175,7 @@ Requisições pode ser feitas na api na url http://localhost:5000/imagens/123 e 
 
 Bom, por enquanto é isso. Um caso de uso explicando alguns conceito importantes. Para saber mais, procure esses tópicos:
 
-* microsserviços
+* Microsserviços
 * Rabbitmq (existem outros, como o Apache Kafka)
 * Arquitetura orientada à eventos
 * Sagas
