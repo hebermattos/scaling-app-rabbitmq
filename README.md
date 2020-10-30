@@ -10,15 +10,15 @@ Tudo ok. retorna uma imagem, bem simples ;)
 
 ## Novas features
 
-Com a passagem do tempo, implementandos algumas features, basedas em rankings e recomendações:
+Com a passagem do tempo, implementamos algumas features, basedas em rankings e recomendações:
 
 ![img](./imagens/buscar-imagem-02.PNG)
 
 ## Sinal amarelo!
 
-Agora nossa chamada esta fazendo coisas que nao importam muito para o cliente, pelo menos não em *tempo real*. todas essas ações podem sem feitas de maneira *assincrona*, liberando a chamada na api para fazer quase exclusivamente o cliente esta pedindo: retornar uma imagem.
+Agora nossa chamada esta fazendo coisas que nao importam muito para o cliente, pelo menos não em *tempo real*. Todas essas ações podem sem feitas de maneira *assincrona*, liberando a chamada na api para fazer quase exclusivamente o que o cliente esta pedindo: retornar uma imagem.
 
-Removendo essas lógicas de "relatórios", deixamos a api mais performática para o cliente e removemos algum pontos de falhas na api. Agora vamos começar a entrar nos *microserviços*.
+Removendo essas lógicas de "relatórios", deixamos a api mais performática para o cliente e removemos alguns pontos de falhas na api. Agora vamos começar a entrar nos *microserviços*.
 
 ## RabbitMQ
 
@@ -28,7 +28,7 @@ Quando for solicitado uma imagem, vamos disparar um *evento* chamado *Visualizac
 
 ![img](./imagens/buscar-imagem-03.PNG)
 
-nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que nossos métodos precisam.
+Nosso evento vai conter somente o ID da imagem (o nome no caso), que é o que nossos métodos precisam.
 
 ![img](./imagens/arq-01.png)
 
@@ -36,7 +36,7 @@ A nossa classe que vai processar o evento tem que implementar a interface *ICons
 
 ## Configurando a solução até agora...
 
-Vamos usar o cliente *Masstransit* para fazer a comunicação com rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida:
+Vamos usar o cliente *Masstransit* para fazer a comunicação com o rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida:
 
 Pacotes Nugets necessários:
 
@@ -50,9 +50,9 @@ no *startup.cs* configuramos da seguiente maneira:
 
 ![img](./imagens/configuracao-01.PNG)
 
-Com isso já é injentado a classe *IBusControl* no container do net core. Essa é a classe usada para enviar os eventos para o *broker* (RabbitMQ é um *Message Broker*), conforme o exemplo mais acima.
+Com isso já é injetado a classe *IBusControl* no container de injeção de dependência do net core. Essa é a classe usada para enviar os eventos para o *broker* (RabbitMQ é um *Message Broker*), conforme o exemplo mais acima.
 
-o nosso servico que irá consumir as mensagens será um *Console Application*, com os seguintes pacotes:
+O nosso servico que irá consumir as mensagens será um *Console Application*, com os seguintes pacotes:
 
 ```
 <PackageReference Include="MassTransit" Version="7.0.6" />
@@ -63,7 +63,7 @@ e com as seguintes configurações:
 
 ![img](./imagens/servico-01.PNG)
 
-a configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API:
+A configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API:
 
 ![img](./imagens/servico-02.PNG)
 
@@ -74,7 +74,7 @@ Os dois serviços estarão escutando a mesma fila, e o próprio rabbitmq vai dis
 
 ![img](./imagens/arq-02.png)
 
-o *broker* garante que a mesma mensagem não vai para o mesmo consumidor.
+o *broker* garante que a mesma mensagem não vai para o mesmo consumidor (log vamos precisar que isso aconteça).
 
 ## Explicando melhor o RabbitMQ
 
@@ -84,9 +84,9 @@ Vamos subir um *rabbit* rapidamendo com docker:
 ```
 docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 ```
-_PS: não connheche docker? dá um google antes e depois volta ;)._
+_PS: não conhece docker? dá um google antes e depois volta ;)._
 
-A porta 5672 é usada para o envio e recebimento de mensagens, que já padrão no nosso cliente, enquanto a 15672 é UI.
+A porta 5672 é usada para o envio e recebimento de mensagens, que já é padrão no nosso cliente, enquanto a 15672 é UI.
 
 ![img](./imagens/rabbitmq-02.PNG)
 
@@ -94,7 +94,7 @@ Temos duas entidades principais, o *Exchange* e a *Queue*. Na hora de publicar u
 
 Utilizando o *MassTransit*, já é criado um *Exchange* igual ao *namespace* do objeto de envio na hora que é publicada a mensagem. Quando um consumidor é conectado, é criada a fila configurada no *ReceiveEndpoint* (*visualicacao.imagem* no exemplo) e é feito também o *bind* com o exchange.
 
-> _*o "grude" acontece pelo objeto da mensagem, que tem que ser igual, inclusive o namespace, no produtor e no consumidor, assim o consumidor sabe qual mensagem tem que processar, em um caso onde existe muitos tipo de mensagens*_
+> _*o "grude" acontece pelo objeto da mensagem, que tem que ser igual, inclusive o namespace, no produtor e no consumidor, assim o consumidor sabe qual mensagem tem que processar.
 
 assim temos a *Queue*:
 
@@ -140,7 +140,7 @@ Como explicamos antes, a mensagem é enviada para um *exchange* e ele envia para
 
 Agora o pessoal que trabalha em um serviço não vai interfir no outro. #cadaUmComSeusBugs
 
-Nos podemos agora dimensionar melhor o uso de recursos e escalar horizontalmente o servico necessaário:
+Nos podemos agora dimensionar melhor o uso de recursos e escalar horizontalmente o servico necessário:
 
 ![img](./imagens/arq-04.png)
 
@@ -154,11 +154,11 @@ Quando acontece uma *exception* em nosso consumidor, a mensagem vai para uma fil
 
 ![img](./imagens/rabbitmq-04.PNG)
 
-Com as *retries* podemos configurar tentativas. por exemplo: 5 tentanticas em intervalos de 1 segundo. depois dessas tentativas, a mensagem vai para a fila de erro.
+Com as *retries* podemos configurar tentativas. por exemplo: 5 tentativas em intervalos de 1 segundo. Somente depois dessas tentativas, a mensagem vai para a fila de erro.
 
 ![img](./imagens/servico-03.PNG)
 
-Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse padrão é muito importante para os microserviços. Basicamente, é monitorado o número de erros no servico, se a quantidade passa do valor estabelecido, o *circuito abre*, impedindo que requisições futuras, que possivelvente vão falhar, sobrecarregue o servico. Depois de um tempo determinado, e se não tiver mais erros acontecendo, o *circuito fecha*, voltando o fluxo normal.
+Outra feature interessante que podemos configurar é o *Circuit Breaker*. Esse padrão é muito importante para os microserviços. Basicamente, é monitorado o número de erros no serviço, e se a quantidade passa do valor estabelecido em um determinado periodo de tempo, o *circuito abre*, impedindo que requisições futuras, que possivelvente vão falhar, sobrecarregue o servico. Depois de um tempo determinado, e se não tiver mais erros acontecendo, o *circuito fecha*, voltando o fluxo normal.
 
 ![img](./imagens/servico-04.PNG)
 
@@ -171,7 +171,7 @@ docker-compose up
 ```
 ![img](./imagens/exemplo.PNG)
 
-Requisições pode ser feitas na api na url http://localhost:5000/imagens/123 e a UI no rabbit pode ser visualizada no http://localhost:15672. No console vai aparecer as mensagens sendo "processadas"
+Requisições pode ser feitas na api na url http://localhost:5000/imagens/123 e a UI no rabbit pode ser visualizada no http://localhost:15672. No console vai aparecer as mensagens sendo "processadas".
 
 Bom, por enquanto é isso. Um caso de uso explicando alguns conceito importantes. Para saber mais, procure esses tópicos:
 
