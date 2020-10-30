@@ -17,7 +17,7 @@ namespace api
         {
             await _busControl.Publish(new VisualicaoImagem
             {
-                IdImagem = "imagem01"
+                IdImagem = id,
             });
 
             return new Imagem

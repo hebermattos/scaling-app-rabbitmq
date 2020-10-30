@@ -19,13 +19,13 @@ namespace servico
 
         private void AtualizarMaisVistas(string id)
         {
-            Console.WriteLine("Atualizou mais vistas");
+            Console.WriteLine("Atualizou mais vistas:" + id);
             return;
         }
 
         private void AtualizarMinhasAvaliacoes(string id)
         {
-            Console.WriteLine("Atualizou minhas visualizações");
+            Console.WriteLine("Atualizou minhas visualizações:" + id);
             return;
         }
     }

@@ -19,13 +19,13 @@ namespace servico
 
         private void AtualizarRecomendacoes(string id)
         {
-            Console.WriteLine("Atualizou Recomendacoes");
+            Console.WriteLine("Atualizou Recomendacoes:" + id);
             return;
         }
 
         private void EnviarNotificacoes(string id)
         {
-            Console.WriteLine("Enviou Notificacoes");
+            Console.WriteLine("Enviou Notificacoes:" + id);
             return;
         }
     }
