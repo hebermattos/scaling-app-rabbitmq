@@ -18,9 +18,9 @@ namespace api.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<Imagem> GetAsync(string nome)
+        public async Task<Imagem> GetAsync(string id)
         {
-            return await _servicoImagem.BuscarImagemAsync(nome);
+            return await _servicoImagem.BuscarImagemAsync(id);
         }
     }
 }
