@@ -32,8 +32,6 @@ Nosso evento vai conter somente o ID da imagem, que é o que nossos métodos pre
 
 ![img](./imagens/arq-01.png)
 
-A nossa classe que vai processar o evento tem que implementar a interface *IConsumer*, passando o objeto que queremos processar.
-
 ## Configurando a solução até agora...
 
 Vamos usar o cliente *Masstransit* para fazer a comunicação com o rabbitmq, pois ele já vem com umas features bem legais que facilita bastante a vida:
@@ -41,9 +39,9 @@ Vamos usar o cliente *Masstransit* para fazer a comunicação com o rabbitmq, po
 Pacotes Nugets necessários:
 
 ```
-<PackageReference Include="MassTransit" Version="7.0.6" />
-<PackageReference Include="MassTransit.AspNetCore" Version="7.0.6" />
-<PackageReference Include="MassTransit.RabbitMQ" Version="7.0.6" />
+<PackageReference Include="MassTransit" Version="7.2.1" />
+<PackageReference Include="MassTransit.AspNetCore" Version="7.2.1" />
+<PackageReference Include="MassTransit.RabbitMQ" Version="7.2.1" />
 ```
 
 no *startup.cs* configuramos da seguiente maneira:
@@ -55,8 +53,8 @@ Com isso já é injetado a classe *IBusControl* no container de injeção de dep
 O nosso servico que irá consumir as mensagens será um *Console Application*, com os seguintes pacotes:
 
 ```
-<PackageReference Include="MassTransit" Version="7.0.6" />
-<PackageReference Include="MassTransit.RabbitMQ" Version="7.0.6" />
+<PackageReference Include="MassTransit" Version="7.2.1" />
+<PackageReference Include="MassTransit.RabbitMQ" Version="7.2.1" />
 ```
 
 e com as seguintes configurações:
@@ -66,6 +64,8 @@ e com as seguintes configurações:
 A configuração é semelhanta a da API, com a adição do *ReceiveEndpoint*, que configura a classe *ProcessarVisualizacaoImagem*, a qual possui todo lógica extraida da API:
 
 ![img](./imagens/servico-02.PNG)
+
+A nossa classe que vai processar o evento tem que implementar a interface *IConsumer*, passando o objeto que queremos processar.
 
 ## Escalabilidade horizontal
 

@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "servicoRecomendacao/1.0.0": {
         "dependencies": {
-          "MassTransit": "7.0.6",
-          "MassTransit.RabbitMQ": "7.0.6"
+          "MassTransit": "7.2.1",
+          "MassTransit.RabbitMQ": "7.2.1"
         },
         "runtime": {
           "servicoRecomendacao.dll": {}
@@ -38,7 +38,7 @@
           }
         }
       },
-      "MassTransit/7.0.6": {
+      "MassTransit/7.2.1": {
         "dependencies": {
           "Automatonymous": "5.0.2",
           "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
@@ -57,20 +57,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.dll": {
-            "assemblyVersion": "7.0.6.0",
-            "fileVersion": "7.0.6.0"
+            "assemblyVersion": "7.2.1.0",
+            "fileVersion": "7.2.1.0"
           }
         }
       },
-      "MassTransit.RabbitMQ/7.0.6": {
+      "MassTransit.RabbitMQ/7.2.1": {
         "dependencies": {
-          "MassTransit": "7.0.6",
+          "MassTransit": "7.2.1",
           "RabbitMQ.Client": "6.2.1"
         },
         "runtime": {
           "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll": {
-            "assemblyVersion": "7.0.6.0",
-            "fileVersion": "7.0.6.0"
+            "assemblyVersion": "7.2.1.0",
+            "fileVersion": "7.2.1.0"
           }
         }
       },
@@ -825,19 +825,19 @@
       "path": "greenpipes/4.0.0",
       "hashPath": "greenpipes.4.0.0.nupkg.sha512"
     },
-    "MassTransit/7.0.6": {
+    "MassTransit/7.2.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-TnyWWSxonafS3qPg1gURx67ahL8T2Rfl0p7UmGFYd6ZrIZsn3JsHTRmYJVJU9zyhKTx0Dc3R5tePZ1knwTsVew==",
-      "path": "masstransit/7.0.6",
-      "hashPath": "masstransit.7.0.6.nupkg.sha512"
+      "path": "masstransit/7.2.1",
+      "hashPath": "masstransit.7.2.1.nupkg.sha512"
     },
-    "MassTransit.RabbitMQ/7.0.6": {
+    "MassTransit.RabbitMQ/7.2.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5SM/5Pe3z2eKPKuLx07pfUUmu0/DkkjqySg2B78usk7wT11NtUwF6pF84+VpNhXuyzM0wACjxpQxiMvxrspWZw==",
-      "path": "masstransit.rabbitmq/7.0.6",
-      "hashPath": "masstransit.rabbitmq.7.0.6.nupkg.sha512"
+      "path": "masstransit.rabbitmq/7.2.1",
+      "hashPath": "masstransit.rabbitmq.7.2.1.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
