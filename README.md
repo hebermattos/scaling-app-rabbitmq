@@ -4,7 +4,7 @@
 
 We have an image viewing API, which at first looked like this:
 
-![img](./imagens/buscar-imagem-01.PNG)
+![img](./images/buscar-imagem-01.PNG)
 
 Everything is OK. returns an image. Pretty simple, right?
 
@@ -12,7 +12,7 @@ Everything is OK. returns an image. Pretty simple, right?
 
 Over time, we implemented some new features, based on rankings and recommendations:
 
-![img](./imagens/buscar-imagem-02.PNG)
+![img](./images/buscar-imagem-02.PNG)
 
 ## Does this feel right?
 
@@ -26,11 +26,11 @@ So what will we do?
 
 When an image is requested, we will trigger an *event* called *VisualizacaoImagem*. this event will be sent to RabbitMQ, and another service will *consume* this event, processing all the rules we removed from the API stream.
 
-![img](./imagens/buscar-imagem-03.PNG)
+![img](./images/buscar-imagem-03.PNG)
 
 Our event will only contain the image ID, which is what our new methods will need.
 
-![img](./imagens/arq-01.png)
+![img](./images/arq-01.png)
 
 ## Configuring the solution so far...
 
@@ -46,7 +46,7 @@ Required Nugets packages:
 
 in *startup.cs* we configure it as follows:
 
-![img](./imagens/configuracao-01.PNG)
+![img](./images/configuracao-01.PNG)
 
 With this, the *IBusControl* class is already injected into the net core dependency injection container. This is the class used to send events to RabbitMQ, as shown in the example above.
 
@@ -59,11 +59,11 @@ Our service that will consume the messages will be a *Console Application*, with
 
 and with the following settings:
 
-![img](./imagens/servico-01.PNG)
+![img](./images/servico-01.PNG)
 
 The configuration is similar to the API, with the addition of *ReceiveEndpoint*, which configures the *ProcessarVisualizacaoImagem* class, which has all the logic extracted from the API:
 
-![img](./imagens/servico-02.PNG)
+![img](./images/servico-02.PNG)
 
 Our class that will process the event must implement the *IConsumer* interface, passing the object we want to process.
 
@@ -72,7 +72,7 @@ Our class that will process the event must implement the *IConsumer* interface, 
 We were also able to horizontally scale rule processing. Just upload the same version of our service.
 The two services will be listening to the same queue, and rabbitmq itself will distribute the messages to consumers appropriately (*round-robin* for example), achieving parallel processing.
 
-![img](./imagens/arq-02.png)
+![img](./images/arq-02.png)
 
 RabbitMQ guarantees that the same message does not go to the same consumer.
 
@@ -86,7 +86,7 @@ docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 ```
 A porta 5672 é usada para o envio e recebimento de mensagens, que já é padrão no nosso cliente, enquanto a 15672 é UI.
 
-![img](./imagens/rabbitmq-02.PNG)
+![img](./images/rabbitmq-02.PNG)
 
 We have two main entities, the *Exchange* and the *Queue*. When publishing a message, it is published on an *Exchange*, and it is sent to the *Queue*.
 
@@ -96,17 +96,17 @@ Using *MassTransit*, an *Exchange* equal to the *namespace* of the sending objec
 
 so we have the *Queue*:
 
-![img](./imagens/rabbit_queue.PNG)
+![img](./images/rabbit_queue.PNG)
 
 
 the *Exchange*:
 
-![img](./imagens/rabbit_exchange.PNG)
+![img](./images/rabbit_exchange.PNG)
 
 
 and the *Binding*:
 
-![img](./imagens/rabbit_bind.PNG)
+![img](./images/rabbit_bind.PNG)
 
 It's starting to look good! We started with an *event-driven architecture* and *asynchronous* and parallel processing. We also don't need to worry too much about service downtime, as the messages will continue in the queue, and when the service goes up, it will consume the messages.
 
@@ -116,11 +116,11 @@ the *masstransit* provides us with features that make error handling easier. Let
 
 When an *exception* happens in our consumer, the message goes to an *_error* queue, for example:
 
-![img](./imagens/rabbitmq-04.PNG)
+![img](./images/rabbitmq-04.PNG)
 
 With *retries* we can configure retries. for example: 5 attempts at 1 second intervals. Only after these attempts does the message go to the error queue.
 
-![img](./imagens/servico-03.PNG)
+![img](./images/servico-03.PNG)
 
 Another interesting feature that we can configure is the *Circuit Breaker*. This pattern is very important for microservices. The number of errors in the service is monitored, and if the quantity exceeds the expected value basically in a certain period of time, the *circuit opens*, preventing future requests, which may possibly fail, from overloading the service. After a set time, and if there are no more errors occurring, the *circuit dies*, returning to normal flow.
 
@@ -133,7 +133,7 @@ Want to see everything running? download the branch *master* and run:
 ```
 docker-compose up
 ```
-![img](./imagens/exemplo.PNG)
+![img](./images/exemplo.PNG)
 
 Requests can be made in the api at the url http://localhost:5000/images/123 and the rabbit UI can be viewed at http://localhost:15672. The messages being "processed" will appear in the console.
 
