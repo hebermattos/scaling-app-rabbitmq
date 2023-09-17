@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using GreenPipes;
 using MassTransit;
 
 namespace servico
@@ -29,7 +28,7 @@ namespace servico
 
                             config.ReceiveEndpoint("recomendacao.imagem", e =>
                             {
-                                e.UseRetry(r => r.Interval(5, TimeSpan.FromSeconds(1)));
+                                e.UseMessageRetry(r => r.Interval(5, TimeSpan.FromSeconds(1)));
                                 e.Consumer<ProcessarRecomendacaoImagem>();
                             });
                         });
