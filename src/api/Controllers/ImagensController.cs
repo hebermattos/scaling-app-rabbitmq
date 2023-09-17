@@ -1,26 +1,25 @@
 ﻿using System.Threading.Tasks;
 using core;
-using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ImagensController : ControllerBase
+    public class ImagesController : ControllerBase
     {
-        private ServicoBuscarImagem _servicoImagem;
+        private ImageService _imageService;
 
-        public ImagensController(ServicoBuscarImagem ServicoImagem)
+        public ImagesController(ImageService imageService)
         {
-            _servicoImagem = ServicoImagem;
+            _imageService = imageService;
         }
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<Imagem> GetAsync(string id)
+        public async Task<Image> GetAsync(string id)
         {
-            return await _servicoImagem.BuscarImagemAsync(id);
+            return await _imageService.GetImage(id);
         }
     }
 }

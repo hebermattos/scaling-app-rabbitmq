@@ -1,8 +1,8 @@
 namespace core
 {
-    public class Imagem
+    public class Image
     {
-        public string Nome { get; set; }
-        public string Conteudo { get; set; }
+        public string Name { get; set; }
+        public string Content { get; set; }
     }
 }

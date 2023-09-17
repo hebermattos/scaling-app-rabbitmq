@@ -1,6 +1,6 @@
 namespace core
 {
-    public class VisualicaoImagem
+    public class ImageViewEvent
     {
         public string IdImagem { get; set; }
     }

@@ -23,7 +23,7 @@ namespace api
         {
             services.AddControllers();
 
-            services.AddTransient<ServicoBuscarImagem>();
+            services.AddTransient<ImageService>();
 
             services.AddMassTransit(x =>
             {
