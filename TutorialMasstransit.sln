@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{62D2C83E-743B-426F-B8A2-8EF4199C951C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "src\api\api.csproj", "{62D2C83E-743B-426F-B8A2-8EF4199C951C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "servicoVisualizacao", "servicoVisualizacao\servicoVisualizacao.csproj", "{06BC6607-B777-47E5-99DC-0ACCC08E4ABF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "servicoVisualizacao", "src\servicoVisualizacao\servicoVisualizacao.csproj", "{06BC6607-B777-47E5-99DC-0ACCC08E4ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "servicoRecomendacao", "servicoRecomendacao\servicoRecomendacao.csproj", "{4F90F548-6EEB-4286-B954-6D78AAC20555}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "servicoRecomendacao", "src\servicoRecomendacao\servicoRecomendacao.csproj", "{4F90F548-6EEB-4286-B954-6D78AAC20555}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
