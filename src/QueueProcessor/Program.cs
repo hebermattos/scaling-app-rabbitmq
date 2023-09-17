@@ -29,7 +29,7 @@ namespace servico
                             config.ReceiveEndpoint("image.view", e =>
                             {
                                 e.UseMessageRetry(r => r.Interval(5, TimeSpan.FromSeconds(1)));
-                                e.Consumer<ProcessarVisualizacaoImagem>();
+                                e.Consumer<ImageViewProcessor>();
                             });
                         });
 

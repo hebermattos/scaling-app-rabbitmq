@@ -27,14 +27,13 @@ namespace api
 
             services.AddMassTransit(x =>
             {
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
-                {
-                    config.Host(new Uri($"rabbitmq://queue"), host =>
-                    {
-                        host.Username("guest");
-                        host.Password("guest");
-                    });
-                }));
+                x.UsingRabbitMq((context, cfg) =>   {
+                        cfg.Host(new Uri($"rabbitmq://queue"), host =>
+                        {
+                            host.Username("guest");
+                            host.Password("guest");
+                        });
+                    });               
             });
         }
 

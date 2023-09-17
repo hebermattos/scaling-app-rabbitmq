@@ -5,9 +5,9 @@ using MassTransit;
 
 namespace servico
 {
-    public class ProcessarVisualizacaoImagem : IConsumer<VisualicaoImagem>
+    public class ImageViewProcessor : IConsumer<ImageViewEvent>
     {
-        public Task Consume(ConsumeContext<VisualicaoImagem> context)
+        public Task Consume(ConsumeContext<ImageViewEvent> context)
         {
             AtualizarMinhasAvaliacoes(context.Message.IdImagem);
 
