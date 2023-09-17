@@ -13,6 +13,10 @@ namespace servico
 
             AtualizarMaisVistas(context.Message.IdImagem);
 
+            AtualizarRecomendacoes(context.Message.IdImagem);
+
+            EnviarNotificacoes(context.Message.IdImagem);
+
             return Task.CompletedTask;
         }
 
@@ -25,6 +29,18 @@ namespace servico
         private void AtualizarMinhasAvaliacoes(string id)
         {
             Console.WriteLine("Atualizou minhas visualizações:" + id);
+            return;
+        }
+
+          private void AtualizarRecomendacoes(string id)
+        {
+            Console.WriteLine("Atualizou Recomendacoes:" + id);
+            return;
+        }
+
+        private void EnviarNotificacoes(string id)
+        {
+            Console.WriteLine("Enviou Notificacoes:" + id);
             return;
         }
     }

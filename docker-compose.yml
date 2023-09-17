@@ -8,11 +8,6 @@ services:
         - "15672:15672"
         - "5672:5672"
 
-    servicorecomendacao:
-        build: src/servicoRecomendacao/
-        depends_on:
-        - queue
-
     servicovisualizacao:
         build: src/servicoVisualizacao/
         depends_on:
