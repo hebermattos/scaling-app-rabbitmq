@@ -84,7 +84,7 @@ Let's quickly run a *rabbit* with Docker:
 ```
 docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 ```
-A porta 5672 é usada para o envio e recebimento de mensagens, que já é padrão no nosso cliente, enquanto a 15672 é UI.
+The port 5672 is used for sending and receiving messages, which is already standard in our client, while 15672 is the UI port.
 
 ![img](./images/rabbitmq-02.PNG)
 
