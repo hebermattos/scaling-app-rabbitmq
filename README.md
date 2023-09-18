@@ -118,7 +118,7 @@ When an *exception* happens in our consumer, the message goes to an *_error* que
 
 ![img](./images/rabbitmq-04.PNG)
 
-With *retries* we can configure retries. for example: 5 attempts at 1 second intervals. Only after these attempts does the message go to the error queue.
+With *retries* we can configure retries. For example: 5 attempts at 1 second intervals. Only after these attempts does the message go to the error queue.
 
 ![img](./images/service-03.PNG)
 
