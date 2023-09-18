@@ -92,19 +92,19 @@ We have two main entities, the *Exchange* and the *Queue*. When publishing a mes
 
 Using *MassTransit*, an *Exchange* equal to the *namespace* of the sending object is already created at the time the message is published. When a consumer is connected, the queue configured in the *ReceiveEndpoint* (*image.view* in the example) is created and the *bind* with the exchange is also done.
 
-> _*the "bind" happens through the message object, which has to be the same, including the namespace, in the producer and consumer, so the consumer knows which message has to be processed.*_
+> _*The "bind" happens through the message object, which has to be the same, including the namespace, in the producer and consumer, so the consumer knows which message has to be processed.*_
 
-so we have the *Queue*:
+Do we have the *Queue*:
 
 ![img](./images/rabbit_queue.PNG)
 
 
-the *Exchange*:
+The *Exchange*:
 
 ![img](./images/rabbit_exchange.PNG)
 
 
-and the *Binding*:
+And the *Binding*:
 
 ![img](./images/rabbit_bind.PNG)
 
@@ -112,7 +112,7 @@ It's starting to look good! We started with an *event-driven architecture* and *
 
 ## And the errors?
 
-the *masstransit* provides us with features that make error handling easier. Let's look at *Retries* and *CircuitBreaker*.
+The *masstransit* provides us with features that make error handling easier. Let's look at *Retries* and *CircuitBreaker*.
 
 When an *exception* happens in our consumer, the message goes to an *_error* queue, for example:
 
