@@ -24,7 +24,7 @@ namespace servico
 
         private void UpdateRecommendations(string id)
         {
-            Console.WriteLine("UpdateMostViewed: " + id);
+            Console.WriteLine("UpdateRecommendations: " + id);
             return;
         }
 
