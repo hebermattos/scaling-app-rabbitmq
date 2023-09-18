@@ -137,4 +137,8 @@ docker-compose up
 
 Requests can be made in the api at the url http://localhost:5000/images/123 and the rabbit UI can be viewed at http://localhost:15672. The messages being "processed" will appear in the console.
 
-Well, that's it for now. I think it's a good start to start dealing with RabbitMq.
+Well, that's it for now. I think it's a good start to start dealing with RabbitMq. Theres ara alot og concepts here that you can explore later:
+
+*Microservices
+*Horizontal Scalability
+
