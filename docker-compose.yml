@@ -8,7 +8,7 @@ services:
         - "15672:15672"
         - "5672:5672"
 
-    servicovisualizacao:
+    queue-processor:
         build: src/QueueProcessor/
         depends_on:
         - queue

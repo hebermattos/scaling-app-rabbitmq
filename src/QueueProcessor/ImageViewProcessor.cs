@@ -9,39 +9,24 @@ namespace servico
     {
         public Task Consume(ConsumeContext<ImageViewEvent> context)
         {
-            AtualizarMinhasAvaliacoes(context.Message.IdImagem);
+            UpdateMostViewed(context.Message.ImageID);
 
-            AtualizarMaisVistas(context.Message.IdImagem);
-
-            AtualizarRecomendacoes(context.Message.IdImagem);
-
-            EnviarNotificacoes(context.Message.IdImagem);
+            UpdateMostViewed(context.Message.ImageID);
 
             return Task.CompletedTask;
         }
 
-        private void AtualizarMaisVistas(string id)
+        private void UpdateMostViewed(string id)
         {
-            Console.WriteLine("Atualizou mais vistas:" + id);
+            Console.WriteLine("UpdateMostViewed" + id);
             return;
         }
 
-        private void AtualizarMinhasAvaliacoes(string id)
+        private void UpdateRecommendations(string id)
         {
-            Console.WriteLine("Atualizou minhas visualizações:" + id);
+            Console.WriteLine("UpdateMostViewed:" + id);
             return;
         }
 
-          private void AtualizarRecomendacoes(string id)
-        {
-            Console.WriteLine("Atualizou Recomendacoes:" + id);
-            return;
-        }
-
-        private void EnviarNotificacoes(string id)
-        {
-            Console.WriteLine("Enviou Notificacoes:" + id);
-            return;
-        }
     }
 }

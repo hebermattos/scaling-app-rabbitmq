@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using core;
 using Microsoft.AspNetCore.Mvc;
+using Model;
 
 namespace api.Controllers
 {

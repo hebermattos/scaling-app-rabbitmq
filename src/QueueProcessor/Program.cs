@@ -26,7 +26,7 @@ namespace servico
                                 cb.ResetInterval = TimeSpan.FromMinutes(5);
                             });
 
-                            config.ReceiveEndpoint("image.view", e =>
+                            config.ReceiveEndpoint("image.view.event", e =>
                             {
                                 e.UseMessageRetry(r => r.Interval(5, TimeSpan.FromSeconds(1)));
                                 e.Consumer<ImageViewProcessor>();
@@ -34,8 +34,6 @@ namespace servico
                         });
 
             bus.Start();
-
-            Console.WriteLine("servico iniciado");
 
             _closing.WaitOne();
         }

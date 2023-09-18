@@ -1,5 +1,4 @@
 using System;
-using core;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +32,8 @@ namespace api
                             host.Username("guest");
                             host.Password("guest");
                         });
+
+                        cfg.ConfigureEndpoints(context);
                     });               
             });
         }
@@ -45,7 +46,7 @@ namespace api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

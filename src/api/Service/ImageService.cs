@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
-using core;
+using Events;
 using MassTransit;
+using Model;
 
 namespace api
 {
@@ -17,13 +18,13 @@ namespace api
         {
             await _busControl.Publish(new ImageViewEvent
             {
-                IdImagem = id,
+                ImageID = id,
             });
 
             return new Image
             {
-                Name = "imagem01",
-                Content = "saukdfapgsiufwauiryhw985v098q235qf79prysbi34hqf6293gry3vq9byg3947ft9hy39yvtoq"
+                Name = "image-01",
+                Content = "<image-content>"
             };
         }       
     }

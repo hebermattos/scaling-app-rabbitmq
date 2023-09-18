@@ -1,4 +1,4 @@
-namespace core
+namespace Model
 {
     public class Image
     {
