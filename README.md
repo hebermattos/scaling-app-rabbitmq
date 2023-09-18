@@ -124,7 +124,7 @@ With *retries* we can configure retries. for example: 5 attempts at 1 second int
 
 Another interesting feature that we can configure is the *Circuit Breaker*. This pattern is very important for microservices. The number of errors in the service is monitored, and if the quantity exceeds the expected value in a certain period of time, the *circuit opens*, preventing future requests, which may possibly fail, from overloading the service. After a set time, and if there are no more errors occurring, the *circuit closes*, returning to normal flow.
 
-![img](./images/service-04.PNG)
+![img](./images/service-05.PNG)
 
 ## Quite a lot, right?
 
