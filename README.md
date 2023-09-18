@@ -139,6 +139,6 @@ Requests can be made in the api at the url http://localhost:5000/images/123 and 
 
 Well, that's it for now. I think it's a good start to start dealing with RabbitMq. Theres ara alot og concepts here that you can explore later:
 
-*Microservices
-*Horizontal Scalability
+* Microservices
+* Horizontal Scalability
 
