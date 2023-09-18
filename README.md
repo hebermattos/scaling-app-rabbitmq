@@ -4,7 +4,7 @@
 
 We have an image viewing API, which at first looked like this:
 
-![img](./images/buscar-imagem-01.PNG)
+![img](./images/get-img-01.PNG)
 
 Everything is OK. returns an image. Pretty simple, right?
 
@@ -12,7 +12,7 @@ Everything is OK. returns an image. Pretty simple, right?
 
 Over time, we implemented some new features, based on rankings and recommendations:
 
-![img](./images/buscar-imagem-02.PNG)
+![img](./images/get-img-02.PNG)
 
 ## Does this feel right?
 
@@ -26,7 +26,7 @@ So what will we do?
 
 When an image is requested, we will trigger an *event* called *ImageViewEvent*. this event will be sent to RabbitMQ, and another service will *consume* this event, processing all the rules we removed from the API stream.
 
-![img](./images/buscar-imagem-03.PNG)
+![img](./images/get-img-03.PNG)
 
 Our event will only contain the image ID, which is what our new methods will need.
 
@@ -46,7 +46,7 @@ Required Nugets packages:
 
 in *startup.cs* we configure it as follows:
 
-![img](./images/configuracao-01.PNG)
+![img](./images/config-01.PNG)
 
 With this, the *IBusControl* class is already injected into the net core dependency injection container. This is the class used to send events to RabbitMQ, as shown in the example above.
 
