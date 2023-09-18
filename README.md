@@ -143,4 +143,5 @@ Well, that's it for now. I think it's a good start to start dealing with RabbitM
 * Horizontal Scalability
 * Event-Driven Architecture
 * Sagas, Orchestration vs Choreography
+* RabbitMQ features
 * And the list go on....
