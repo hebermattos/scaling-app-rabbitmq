@@ -80,7 +80,7 @@ RabbitMQ guarantees that the same message does not go to the same consumer.
 
 Well, now let's explain a little better how rabbitmq and masstransit work.
 
-Let's quickly run a *rabbit* with Docker:
+Let's quickly run *RabbitMQ* with Docker:
 ```
 docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
 ```
