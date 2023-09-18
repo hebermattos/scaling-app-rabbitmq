@@ -16,7 +16,7 @@ Over time, we implemented some new features, based on rankings and recommendatio
 
 ## Does this feel right?
 
-Now our call is doing things that don't really matter to the customer, at least not in *real time*. All of these actions can be done *asynchronously*, freeing the api call to do almost exclusively what the client is asking for: return an image.
+Now the API call is doing things that don't really matter to the customer, at least not in *real time*. All of these actions can be done *asynchronously*, freeing the api call to do almost exclusively what the client is asking for: return an image.
 
 By removing these "reporting" logics, we make the API more performant for the client and remove some points of failure in the API.
 
