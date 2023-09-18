@@ -1,4 +1,4 @@
-namespace core
+namespace Events
 {
     public class ImageViewEvent
     {

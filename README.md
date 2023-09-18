@@ -133,7 +133,7 @@ Want to see everything running? download the branch *master* and run:
 ```
 docker-compose up
 ```
-![img](./images/exemplo.PNG)
+![img](./images/exemple.PNG)
 
 Requests can be made in the api at the url http://localhost:5000/images/123 and the rabbit UI can be viewed at http://localhost:15672. The messages being "processed" will appear in the console.
 

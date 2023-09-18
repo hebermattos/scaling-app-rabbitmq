@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using core;
+using Events;
 using MassTransit;
 
 namespace servico
@@ -11,20 +11,20 @@ namespace servico
         {
             UpdateMostViewed(context.Message.ImageID);
 
-            UpdateMostViewed(context.Message.ImageID);
+            UpdateRecommendations(context.Message.ImageID);
 
             return Task.CompletedTask;
         }
 
         private void UpdateMostViewed(string id)
         {
-            Console.WriteLine("UpdateMostViewed" + id);
+            Console.WriteLine("UpdateMostViewed: " + id);
             return;
         }
 
         private void UpdateRecommendations(string id)
         {
-            Console.WriteLine("UpdateMostViewed:" + id);
+            Console.WriteLine("UpdateMostViewed: " + id);
             return;
         }
 
