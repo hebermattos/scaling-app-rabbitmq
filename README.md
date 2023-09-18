@@ -24,7 +24,7 @@ By removing these "reporting" logics, we make the API more performant for the cl
 
 So what will we do?
 
-When an image is requested, we will trigger an *event* called *VisualizacaoImagem*. this event will be sent to RabbitMQ, and another service will *consume* this event, processing all the rules we removed from the API stream.
+When an image is requested, we will trigger an *event* called *ImageViewEvent*. this event will be sent to RabbitMQ, and another service will *consume* this event, processing all the rules we removed from the API stream.
 
 ![img](./images/buscar-imagem-03.PNG)
 
@@ -61,7 +61,7 @@ and with the following settings:
 
 ![img](./images/servico-01.PNG)
 
-The configuration is similar to the API, with the addition of *ReceiveEndpoint*, which configures the *ProcessarVisualizacaoImagem* class, which has all the logic extracted from the API:
+The configuration is similar to the API, with the addition of *ReceiveEndpoint*, which configures the *ImageViewProcessor* class, which has all the logic extracted from the API:
 
 ![img](./images/servico-02.PNG)
 
