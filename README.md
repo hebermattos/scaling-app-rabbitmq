@@ -69,7 +69,7 @@ Our class that will process the event must implement the *IConsumer* interface, 
 
 ## Horizontal scalability
 
-We were also able to horizontally scale rule processing. Just upload the same version of our service.
+We were also able to horizontally scale rule processing. You can just run other instance of the same version of our service.
 The two services will be listening to the same queue, and rabbitmq itself will distribute the messages to consumers appropriately (*round-robin* for example), achieving parallel processing.
 
 ![img](./images/arq-02.png)
@@ -110,7 +110,7 @@ and the *Binding*:
 
 It's starting to look good! We started with an *event-driven architecture* and *asynchronous* and parallel processing. We also don't need to worry too much about service downtime, as the messages will continue in the queue, and when the service goes up, it will consume the messages.
 
-## E os erros?
+## And the errors?
 
 the *masstransit* provides us with features that make error handling easier. Let's look at *Retries* and *CircuitBreaker*.
 
