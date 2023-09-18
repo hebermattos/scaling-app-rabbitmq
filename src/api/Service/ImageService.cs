@@ -14,30 +14,18 @@ namespace api
             _busControl = busControl;
         }
 
-        public Image GetImage(string id)
+        public async Task<Image> GetImage(string id)
         {
-            UpdateMostViewed(id);
-
-            UpdateRecommendations(id);
+            await _busControl.Publish(new ImageViewEvent
+            {
+                ImageID = id,
+            });
 
             return new Image
             {
                 Name = "image-01",
                 Content = "<image-content>"
             };
-        }
-
-
-        private void UpdateMostViewed(string id)
-        {
-            //Console.WriteLine("UpdateMostViewed" + id);
-            return;
-        }
-
-        private void UpdateRecommendations(string id)
-        {
-            //Console.WriteLine("UpdateMostViewed:" + id);
-        }
-
+        }       
     }
 }
