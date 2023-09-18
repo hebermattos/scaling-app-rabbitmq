@@ -6,7 +6,7 @@ We have an image viewing API, which at first looked like this:
 
 ![img](./images/get-img-01.PNG)
 
-Everything is OK. returns an image. Pretty simple, right?
+Everything is OK. Its just returns an image. Pretty simple, right?
 
 ## New features
 
