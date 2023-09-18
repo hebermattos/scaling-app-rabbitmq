@@ -59,11 +59,11 @@ Our service that will consume the messages will be a *Console Application*, with
 
 and with the following settings:
 
-![img](./images/servico-01.PNG)
+![img](./images/service-04.PNG)
 
 The configuration is similar to the API, with the addition of *ReceiveEndpoint*, which configures the *ImageViewProcessor* class, which has all the logic extracted from the API:
 
-![img](./images/servico-02.PNG)
+![img](./images/service-02.PNG)
 
 Our class that will process the event must implement the *IConsumer* interface, passing the object we want to process.
 
@@ -120,11 +120,11 @@ When an *exception* happens in our consumer, the message goes to an *_error* que
 
 With *retries* we can configure retries. for example: 5 attempts at 1 second intervals. Only after these attempts does the message go to the error queue.
 
-![img](./images/servico-03.PNG)
+![img](./images/service-03.PNG)
 
 Another interesting feature that we can configure is the *Circuit Breaker*. This pattern is very important for microservices. The number of errors in the service is monitored, and if the quantity exceeds the expected value in a certain period of time, the *circuit opens*, preventing future requests, which may possibly fail, from overloading the service. After a set time, and if there are no more errors occurring, the *circuit closes*, returning to normal flow.
 
-![img](./images/servico-04.PNG)
+![img](./images/service-04.PNG)
 
 ## Quite a lot, right?
 
