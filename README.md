@@ -141,4 +141,6 @@ Well, that's it for now. I think it's a good start to start dealing with RabbitM
 
 * Microservices
 * Horizontal Scalability
-
+* Event-Driven Architecture
+* Sagas, Orchestration vs Choreography
+* And the list go on....
