@@ -1,4 +1,4 @@
-# Scaling your App with RabbitMQ
+# Scaling your app with RabbitMQ
 
 ## At the beginning...
 
