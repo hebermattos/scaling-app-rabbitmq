@@ -4,7 +4,7 @@
 
 RabbitMQ is a message broker. A message broker is software that enables applications to communicate with each other and exchange information, even if they were written in different languages and platforms.
 
-A message broker acts as a middleman for various services. They can be used to reduce loads and delivery times for your applications by delegating tasks that would normally take up a lot of time or resources to a third party process. You can remove for example report generation, sending an email, http requests or SMS.
+A message broker acts as a middleman for various services. They can be used to reduce loads and delivery times for your applications by delegating tasks that would normally take up a lot of time or resources to a third party process. You can remove the heavy work from our applications such as generating reports or sending an email, http requests or SMS.
 
 RabbitMQ enables software applications to connect and scale. Applications can connect to each other, as components of a larger application. Messaging is asynchronous, decoupling applications by separating sending and receiving data.
 
