@@ -4,7 +4,9 @@
 
 RabbitMQ is a message broker: it accepts and forwards messages. You can think about it as a post office: when you put the mail that you want posting in a post box, you can be sure that the letter carrier will eventually deliver the mail to your recipient. In this analogy, RabbitMQ is a post box, a post office, and a letter carrier.
 
-A message broker acts as a middleman for various services (e.g. a web application, as in this example). They can be used to reduce loads and delivery times of web application servers by delegating tasks that would normally take up a lot of time or resources to a third party that has no other job.
+A message broker acts as an intermediary for various services. They can be used to reduce loads and delivery times of web application servers by delegating tasks that would normally take resources and time to a third party process.
+
+RabbitMQ can be used for performing background operations and performing asynchronous operations. It is also a way to exchange the data between different platform applications.
 
 By using RabbitMQ, we can remove some heavy work from our web applications such as sending a reports in Excel or Pdf format’s or sending an email, SMS or another task such as trigger some other applications to start processing.
 
@@ -15,7 +17,7 @@ Besides using for decoupling software components RabbitMQ can be used for:
 - Performing background operations
 - Performing asynchronous operation
 
-In this example we will show how to decouple your application, providing performance and scalability to your application
+In this example we will show how to decouple your application, providing performance and scalability.
 
 ## At the beginning...
 
