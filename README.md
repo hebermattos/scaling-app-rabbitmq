@@ -6,7 +6,14 @@ RabbitMQ is a message broker: it accepts and forwards messages. You can think ab
 
 A message broker acts as a middleman for various services (e.g. a web application, as in this example). They can be used to reduce loads and delivery times of web application servers by delegating tasks that would normally take up a lot of time or resources to a third party that has no other job.
 
+By using RabbitMQ, we can remove some heavy work from our web applications such as sending a reports in Excel or Pdf format’s or sending an email, SMS or another task such as trigger some other applications to start processing.
+
 Messaging enables software applications to connect and scale. Applications can connect to each other, as components of a larger application, or to user devices and data. Messaging is asynchronous, decoupling applications by separating sending and receiving data.
+
+Besides using for decoupling software components RabbitMQ can be used for:
+
+- Performing background operations
+- Performing asynchronous operation
 
 In this example we will show how to decouple your application, providing performance and scalability to your application
 
