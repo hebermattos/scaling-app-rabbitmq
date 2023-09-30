@@ -10,12 +10,13 @@ You can remove the heavy work from our applications such as generating reports o
 
 RabbitMQ enables software applications to connect and scale. Applications can connect to each other, as components of a larger application. Messaging is asynchronous, decoupling applications by separating sending and receiving data.
 
-So, besides using for decoupling software components, RabbitMQ can be used for:
+So it can be used to:
 
+- Decoupling software components
 - Performing background operations
 - Performing asynchronous operation
 
-In this example we will show how to decouple your application, providing performance and scalability.
+In this example we will show how to decouple the application, providing performance and scalability.
 
 ## At the beginning...
 
