@@ -14,7 +14,7 @@ So it can be used to:
 - Performing background operations
 - Performing asynchronous operation
 
-In this example we will show how to decouple the application, providing performance and scalability.
+In this example we will show how to decouple an application, providing performance and scalability.
 
 ## At the beginning...
 
