@@ -2,17 +2,15 @@
 
 ## why use rabbitmq
 
-RabbitMQ is a message broker: it accepts and forwards messages. You can think about it as a post office: when you put the mail that you want posting in a post box, you can be sure that the letter carrier will eventually deliver the mail to your recipient. In this analogy, RabbitMQ is a post box, a post office, and a letter carrier.
+RabbitMQ is a message broker. A message broker is software that enables applications to communicate with each other and exchange information, even if they were written in different languages and platforms.
 
-A message broker acts as an intermediary for various services. They can be used to reduce loads and delivery times of web application servers by delegating tasks that would normally take resources and time to a third party process.
+A message broker acts as a middleman for various services. They can be used to reduce loads and delivery times of web application servers by delegating tasks that would normally take up a lot of time or resources to a third party process.
 
-RabbitMQ can be used for performing background operations and performing asynchronous operations. It is also a way to exchange the data between different platform applications.
+You can remove the heavy work from our applications such as generating reports or sending an email, http requests or SMS.
 
-By using RabbitMQ, we can remove some heavy work from our web applications such as sending a reports in Excel or Pdf format’s or sending an email, SMS or another task such as trigger some other applications to start processing.
+RabbitMQ enables software applications to connect and scale. Applications can connect to each other, as components of a larger application. Messaging is asynchronous, decoupling applications by separating sending and receiving data.
 
-Messaging enables software applications to connect and scale. Applications can connect to each other, as components of a larger application, or to user devices and data. Messaging is asynchronous, decoupling applications by separating sending and receiving data.
-
-Besides using for decoupling software components RabbitMQ can be used for:
+So, besides using for decoupling software components, RabbitMQ can be used for:
 
 - Performing background operations
 - Performing asynchronous operation
