@@ -1,5 +1,15 @@
 # Scaling your app with RabbitMQ
 
+## why use rabbitmq
+
+RabbitMQ is a message broker: it accepts and forwards messages. You can think about it as a post office: when you put the mail that you want posting in a post box, you can be sure that the letter carrier will eventually deliver the mail to your recipient. In this analogy, RabbitMQ is a post box, a post office, and a letter carrier.
+
+A message broker acts as a middleman for various services (e.g. a web application, as in this example). They can be used to reduce loads and delivery times of web application servers by delegating tasks that would normally take up a lot of time or resources to a third party that has no other job.
+
+Messaging enables software applications to connect and scale. Applications can connect to each other, as components of a larger application, or to user devices and data. Messaging is asynchronous, decoupling applications by separating sending and receiving data.
+
+In this example we will show how to decouple your application, providing performance and scalability to your application
+
 ## At the beginning...
 
 We have an image viewing API, which at first looked like this:
