@@ -1,6 +1,6 @@
 # Scaling your app with RabbitMQ
 
-## why use rabbitmq
+## Why use RabbitMQ
 
 RabbitMQ is a message broker. A message broker is software that enables applications to communicate with each other and exchange information, even if they were written in different languages and platforms.
 
