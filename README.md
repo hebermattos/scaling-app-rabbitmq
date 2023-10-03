@@ -144,7 +144,7 @@ Another interesting feature that we can configure is the *Circuit Breaker*. This
 
 ## Quite a lot, right?
 
-Want to see everything running? download the branch *master* and run:
+Want to see everything running? download the branch *master* from https://github.com/hebermattos/scaling-app-rabbitmq and run:
 
 ```
 docker-compose up
