@@ -3,10 +3,11 @@ version: '3'
 services:
 
     queue:
-        image: "rabbitmq:3-management"
+        build: src/Rabbitmq/
         ports:
         - "15672:15672"
         - "5672:5672"
+        - "5552:5552"
 
     queue-processor:
         build: src/QueueProcessor/

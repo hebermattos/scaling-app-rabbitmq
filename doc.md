@@ -73,10 +73,6 @@ Our service that will consume the messages will be a *Console Application*, with
 <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.1" />
 ```
 
-and with the following settings:
-
-![img](./images/service-04.PNG)
-
 The configuration is similar to the API, with the addition of *ReceiveEndpoint*, which configures the *ImageViewProcessor* class, which has all the logic extracted from the API:
 
 ![img](./images/service-02.PNG)
@@ -98,7 +94,7 @@ Well, now let's explain a little better how rabbitmq and masstransit work.
 
 Let's quickly run *RabbitMQ* with Docker:
 ```
-docker run -p 5672:5672 -p 15672:15672 rabbitmq:3.8.9-management
+docker run -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
 The port 5672 is used for sending and receiving messages, which is already standard in our client, while 15672 is the UI port.
 
